@@ -1,0 +1,4435 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:urf="https://github.com/nob140/iur-ade-citygml3/urf" elementFormDefault="qualified" targetNamespace="https://github.com/nob140/iur-ade-citygml3/urf" version="3.9.0" xmlns:="">
+  <import namespace=""/>
+  <import namespace="http://www.opengis.net/citygml/2.0"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="AccomodationType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:AccomodationTypeType"/>
+  <complexType name="AccomodationTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="numberOfAccomodation" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AccomodationTypePropertyType">
+    <sequence>
+      <element ref="urf:AccomodationType"/>
+    </sequence>
+  </complexType>
+  <element name="Administration" substitutionGroup="urf:_UrbanFunction" type="urf:AdministrationType"/>
+  <complexType name="AdministrationType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="dmAttribute" type=":DmAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AdministrationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Administration"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Agreement" substitutionGroup="urf:Zone" type="urf:AgreementType"/>
+  <complexType name="AgreementType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="applicableArea"/>
+          <element minOccurs="0" name="expiration"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AgreementPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Agreement"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="AgriculturalDevelopmentType" substitutionGroup="gml:AbstractObject" type="urf:AgriculturalDevelopmentTypeType"/>
+  <complexType name="AgriculturalDevelopmentTypeType">
+    <sequence>
+      <element name="id"/>
+      <element minOccurs="0" name="blockName"/>
+      <element minOccurs="0" name="projectType"/>
+      <element minOccurs="0" name="implementationBody"/>
+      <element minOccurs="0" name="benefitArea"/>
+      <element minOccurs="0" name="benefitAreaInUrbanArea"/>
+      <element minOccurs="0" name="startFiscalYear"/>
+      <element minOccurs="0" name="measureType"/>
+      <element minOccurs="0" name="benefitPeriod"/>
+      <element minOccurs="0" name="note"/>
+    </sequence>
+  </complexType>
+  <complexType name="AgriculturalDevelopmentTypePropertyType">
+    <sequence>
+      <element ref="urf:AgriculturalDevelopmentType"/>
+    </sequence>
+  </complexType>
+  <element name="AircraftNoiseControlZone" substitutionGroup="urf:DistrictsAndZones" type="urf:AircraftNoiseControlZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第16号で定められる地区。
+特定空港周辺航空機騒音対策特別措置法（昭和五十三年法律第二十六号）第4条第1項の規定による航空機騒音障害防止地区。
+（都市計画法第8条第1項第16号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="AircraftNoiseControlZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AircraftNoiseControlZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:AircraftNoiseControlZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="AreaClassicificationType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:AreaClassicificationTypeType"/>
+  <complexType name="AreaClassicificationTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element name="area"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AreaClassicificationTypePropertyType">
+    <sequence>
+      <element ref="urf:AreaClassicificationType"/>
+    </sequence>
+  </complexType>
+  <element name="AreaClassification" substitutionGroup="urf:Zone" type="urf:AreaClassificationType">
+    <annotation>
+      <documentation>都市計画法第7条に基づき、無秩序な市街地の拡大による環境悪化の防止、計画的な公共施設整備などによる良好な市街地の形成などを行うため、都市計画区域について区分された、計画的な市街化を図るべき区域「市街化区域」と、市街化を抑制すべき「市街化調整区域」。
+なお、この区分は一般的に「線引き」と呼ばれる。
+（都市計画法第7条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="AreaClassificationType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="population"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AreaClassificationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:AreaClassification"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Boundary" substitutionGroup="gml:AbstractObject" type="urf:BoundaryType">
+    <annotation>
+      <documentation>区域と他の区域とを区分する境界線。</documentation>
+    </annotation>
+  </element>
+  <complexType name="BoundaryType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="class"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="function"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="usage"/>
+      <element minOccurs="0" name="offset"/>
+      <element minOccurs="0" name="offsetDirection"/>
+      <element minOccurs="0" name="location"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="dmAttribute" type=":DmAttributePropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="BoundaryPropertyType">
+    <sequence>
+      <element ref="urf:Boundary"/>
+    </sequence>
+  </complexType>
+  <element name="BreakdownOfNominalArea" substitutionGroup="gml:AbstractObject" type="urf:BreakdownOfNominalAreaType"/>
+  <complexType name="BreakdownOfNominalAreaType">
+    <sequence>
+      <element name="breakdown"/>
+      <element name="areaInSquareMeter"/>
+    </sequence>
+  </complexType>
+  <complexType name="BreakdownOfNominalAreaPropertyType">
+    <sequence>
+      <element ref="urf:BreakdownOfNominalArea"/>
+    </sequence>
+  </complexType>
+  <element name="CensusBlock" substitutionGroup="urf:_UrbanFunction" type="urf:CensusBlockType"/>
+  <complexType name="CensusBlockType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="townName"/>
+          <element minOccurs="0" name="blockName"/>
+          <element minOccurs="0" name="economicActivityType" type="urf:EconomicActivityTypePropertyType"/>
+          <element minOccurs="0" name="populationType" type="urf:PopulationTypePropertyType"/>
+          <element minOccurs="0" name="daytimePopulationType" type="urf:DaytimePopulationTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CensusBlockPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CensusBlock"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveFacilitiesForReconstruction" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveFacilitiesForReconstructionType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第14号に定める施設。
+大規模災害からの復興に関する法律（平成二十五年法律第五十五号）第2条第8号に規定する一団地の復興拠点市街地形成施設。
+（都市計画法第11条第1項第14号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveFacilitiesForReconstructionType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="housingFacilities"/>
+          <element minOccurs="0" name="supecificBusinessFacilities"/>
+          <element minOccurs="0" name="publicFacilities"/>
+          <element minOccurs="0" name="utilityFacilities"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveFacilitiesForReconstructionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveFacilitiesForReconstruction"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveFacilitiesForReconstructionAndRevitalization" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveFacilitiesForReconstructionAndRevitalizationType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第13号に定める施設。
+福島復興再生特別措置法（平成二十四年法律第二十五号）第32条第1項に規定する一団地の復興再生拠点市街地形成施設。
+（都市計画法第11条第1項第13号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveFacilitiesForReconstructionAndRevitalizationType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="housingFacilities"/>
+          <element minOccurs="0" name="supecificBusinessFacilities"/>
+          <element minOccurs="0" name="publicFacilities"/>
+          <element minOccurs="0" name="utilityFacilities"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveFacilitiesForReconstructionAndRevitalizationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveFacilitiesForReconstructionAndRevitalization"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveFacilitiesForTsunamiDisasterPrevention" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveFacilitiesForTsunamiDisasterPreventionType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第12号に定める施設。
+津波防災地域づくりに関する法律（平成二十三年法律第百二十三号）第2条第15項に規定する一団地の津波防災拠点市街地形成施設。
+（都市計画法第11条第1項第12号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveFacilitiesForTsunamiDisasterPreventionType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="housingFacilities"/>
+          <element minOccurs="0" name="supecificBusinessFacilities"/>
+          <element minOccurs="0" name="publicFacilities"/>
+          <element minOccurs="0" name="utilityFacilities"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveFacilitiesForTsunamiDisasterPreventionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveFacilitiesForTsunamiDisasterPrevention"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveGovernmentAndPublicOfficeFacilities" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveGovernmentAndPublicOfficeFacilitiesType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第9号に定める、一団地の国家機関又は地方公共団体の建築物及びこれらの付帯に関する通路その他の施設。
+（都市計画法第11条第1項第9号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveGovernmentAndPublicOfficeFacilitiesType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="floorAreaRate"/>
+          <element minOccurs="0" name="publicFacilitiesAllocationPolicy"/>
+          <element minOccurs="0" name="scheduledExecutor"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveGovernmentAndPublicOfficeFacilitiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveGovernmentAndPublicOfficeFacilities"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveHousingFacilities" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveHousingFacilitiesType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第8号に定める、一団地における50戸以上の集団住宅及びこれらに附帯する通路その他の施設。
+（都市計画法第11条第1項第8号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveHousingFacilitiesType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="floorAreaRate"/>
+          <element minOccurs="0" name="numberOfLowRiseHousing"/>
+          <element minOccurs="0" name="numberOfMiddleRiseHousing"/>
+          <element minOccurs="0" name="numberOfHighRiseHousing"/>
+          <element minOccurs="0" name="totalNumberOfHousing"/>
+          <element minOccurs="0" name="publicFacilitiesAllocationPolicy"/>
+          <element minOccurs="0" name="scheduledExecutor"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveHousingFacilitiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveHousingFacilities"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CollectiveUrbanDisasterPreventionFacilities" substitutionGroup="urf:UrbanFacility" type="urf:CollectiveUrbanDisasterPreventionFacilitiesType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第10号に定める、溢水、湛水、津波、高潮その他の自然現象による災害が発生した場合における居住者等（居住者、来訪者又は滞在者をいう。以下同じ。）の安全を確保するための拠点となる一団地の特定公益的施設（避難場所の提供、生活関連物資の配布、保健医療サービスの提供その他の当該災害が発生した場合における居住者等の安全を確保するために必要な機能を有する集会施設、購買施設、医療施設その他の施設及び公共施設。
+（都市計画法第11条第1項第10号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="CollectiveUrbanDisasterPreventionFacilitiesType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="specificUtilityAndPublicFacilities"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CollectiveUrbanDisasterPreventionFacilitiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:CollectiveUrbanDisasterPreventionFacilities"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="CommutingPopulationType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:CommutingPopulationTypeType"/>
+  <complexType name="CommutingPopulationTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="commutingPopulation" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CommutingPopulationTypePropertyType">
+    <sequence>
+      <element ref="urf:CommutingPopulationType"/>
+    </sequence>
+  </complexType>
+  <element name="ConservationZoneForClustersOfTraditionalStructures" substitutionGroup="urf:DistrictsAndZones" type="urf:ConservationZoneForClustersOfTraditionalStructuresType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第15号で定められる地区。
+文化財保護法（昭和二十五年法律第二百十四号）第143条第1項の規定による伝統的建造物群保存地区。
+（都市計画法第8条第1項第15号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ConservationZoneForClustersOfTraditionalStructuresType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ConservationZoneForClustersOfTraditionalStructuresPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ConservationZoneForClustersOfTraditionalStructures"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DID" substitutionGroup="urf:_UrbanFunction" type="urf:DIDType"/>
+  <complexType name="DIDType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="population"/>
+          <element minOccurs="0" name="populationDensity"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DIDPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DID"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DaytimePopulationType" substitutionGroup="gml:AbstractObject" type="urf:DaytimePopulationTypeType"/>
+  <complexType name="DaytimePopulationTypeType">
+    <sequence>
+      <element minOccurs="0" name="daytimePopulation"/>
+      <element minOccurs="0" name="daytimePopulationDensity"/>
+      <element minOccurs="0" name="daytimeOfficeCommuter"/>
+      <element minOccurs="0" name="daytimeSchoolCommuter"/>
+      <element minOccurs="0" name="daytimeUnder15"/>
+      <element minOccurs="0" name="daytimeOver15"/>
+      <element minOccurs="0" name="agriculturalWorker"/>
+      <element minOccurs="0" name="nonCommuter"/>
+    </sequence>
+  </complexType>
+  <complexType name="DaytimePopulationTypePropertyType">
+    <sequence>
+      <element ref="urf:DaytimePopulationType"/>
+    </sequence>
+  </complexType>
+  <element name="DevelopmentProject" substitutionGroup="urf:Zone" type="urf:DevelopmentProjectType"/>
+  <complexType name="DevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="urbanDevelopmentType" type="urf:UrbanDevelopmentProjectTypePropertyType"/>
+          <element minOccurs="0" name="residentialDevelopmentType" type="urf:ResidentialDevelopmentTypePropertyType"/>
+          <element minOccurs="0" name="agriculturalDevelopmentType" type="urf:AgriculturalDevelopmentTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DisasterDamage" substitutionGroup="urf:_UrbanFunction" type="urf:DisasterDamageType"/>
+  <complexType name="DisasterDamageType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="date"/>
+          <element minOccurs="0" name="damagedArea"/>
+          <element minOccurs="0" name="numberOfDamagedHouses"/>
+          <element minOccurs="0" name="numberOfHousesFloodedAboveFloorLevel"/>
+          <element minOccurs="0" name="numberOfHousesFloodedBelowFlooeLevel"/>
+          <element minOccurs="0" name="maximumRainfallPerHour"/>
+          <element minOccurs="0" name="totalRainfall"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DisasterDamagePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DisasterDamage"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DisasterPreventionBase" substitutionGroup="urf:_UrbanFunction" type="urf:DisasterPreventionBaseType"/>
+  <complexType name="DisasterPreventionBaseType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="capacity"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DisasterPreventionBasePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DisasterPreventionBase"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DisasterPreventionBaseType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:DisasterPreventionBaseTypeType"/>
+  <complexType name="DisasterPreventionBaseTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element name="name"/>
+          <element name="type"/>
+          <element name="capacity"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DisasterPreventionBaseTypePropertyType">
+    <sequence>
+      <element ref="urf:DisasterPreventionBaseType"/>
+    </sequence>
+  </complexType>
+  <element name="DisasterPreventionBlockImprovementProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:DisasterPreventionBlockImprovementProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第7号に定める事業。
+（都市計画法第12条第1項第7号）
+密集市街地整備法による防災街区整備事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DisasterPreventionBlockImprovementProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="disasterPreventionPublicFacilityAllocation"/>
+          <element name="otherPublicFacilityAllocation"/>
+          <element name="developmentPlan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DisasterPreventionBlockImprovementProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DisasterPreventionBlockImprovementProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DisasterPreventionBlockImprovementZonePlan" substitutionGroup="urf:_AbstractDistrictPlan" type="urf:DisasterPreventionBlockImprovementZonePlanType">
+    <annotation>
+      <documentation>密集市街地整備法第32条第1項の規定による防災街区整備地区計画。
+（都市計画法第12条の4第1項第2号）
+防災街区整備地区計画については、都市計画法第12条の4第2項に定める事項のほか、都市計画に、密集市街地法第32条第2項第1号及び第2号に掲げる事項を定めるものとするとともに、第3号に掲げる事項を定めるよう努めるものとする。
+
+	1. 特定建築物地区整備計画
+	2. 防災街区整備地区整備計画
+	3. 当該防災街区整備地区計画の目標その他当該区域の整備に関する方針
+
+
+関連役割「地区整備計画」により、「特定建築物地区整備計画」及び「防災街区整備地区整備計画」を保持する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DisasterPreventionBlockImprovementZonePlanType">
+    <complexContent>
+      <extension base="urf:_AbstractDistrictPlanType">
+        <sequence>
+          <element minOccurs="0" name="zonalDisasterPreventionFacilitiesAllocation"/>
+          <element minOccurs="0" name="specifiedZonalDisasterPreventionFacilitiesAllocation"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="zonalDisasterPreventionFacilities">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:ZonalDisasterPreventionFacility"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DisasterPreventionBlockImprovementZonePlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DisasterPreventionBlockImprovementZonePlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistributionBusinessPark" substitutionGroup="urf:UrbanFacility" type="urf:DistributionBusinessParkType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第11号に定める施設。
+（都市計画法第11条第1項第11号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistributionBusinessParkType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="distributionBusinessPark"/>
+          <element minOccurs="0" name="publicAndUtilityFacilities"/>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="floorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="scheduledExecutor"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistributionBusinessParkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistributionBusinessPark"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistributionBusinessZone" substitutionGroup="urf:DistrictsAndZones" type="urf:DistributionBusinessZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第13号で定められる地区。
+流通業務市街地の整備に関する法律（昭和四十一年法律第百十号）第4条第1項の規定による流通業務地区。
+（都市計画法第8条第1項第13号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistributionBusinessZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="guidelinePublicationDate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistributionBusinessZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistributionBusinessZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistributionOfFloraAndFauna" substitutionGroup="urf:_UrbanFunction" type="urf:DistributionOfFloraAndFaunaType"/>
+  <complexType name="DistributionOfFloraAndFaunaType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistributionOfFloraAndFaunaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistributionOfFloraAndFauna"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="District" substitutionGroup="urf:Zone" type="urf:DistrictType">
+    <annotation>
+      <documentation>地区整備計画において、一定の建築物等に関する事項が定められた範囲。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="buildingRestrictions"/>
+          <element minOccurs="0" name="useRestrictions"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+          <element minOccurs="0" name="minimumBuildingCoverageRate"/>
+          <element minOccurs="0" name="minimumSiteArea"/>
+          <element minOccurs="0" name="minimumBuildingArea"/>
+          <element minOccurs="0" name="minimumGroundHeight"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="structurePlacementRestriction"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="minimumFloorHeight"/>
+          <element minOccurs="0" name="buildingDesignRestriction"/>
+          <element minOccurs="0" name="minimumGreeningRate"/>
+          <element minOccurs="0" name="fenceGuideline"/>
+          <element minOccurs="0" name="restrictionsForFireProtection"/>
+          <element minOccurs="0" name="restrictionsForNoiseProtection"/>
+          <element minOccurs="0" name="minimumFrontageRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:District"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="District" substitutionGroup="gml:AbstractFeature" type="urf:DistrictType"/>
+  <complexType name="DistrictType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:District"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictDevelopmentPlan" substitutionGroup="urf:Zone" type="urf:DistrictDevelopmentPlanType">
+    <annotation>
+      <documentation>次に掲げる施設（以下「地区施設」という。）及び建築物等の整備並びに土地の利用に関する計画（以下「地区整備計画」という。）
+	- 主として街区内の居住者等の利用に供される道路、公園その他の政令で定める施設
+	- 街区における防災上必要な機能を確保するための避難施設、避難路、雨水貯留浸透施設（雨水を一時的に貯留し、又は地下に浸透させる機能を有する施設であつて、浸水による被害の防止を目的とするものをいう。）その他の政令で定める施設
+（都市計画法第12条の5第2項第1号）
+なお、政令で定める施設は、都市計画施設以外の施設である道路又は公園、緑地、広場その他の公共空地とする。
+（都市計画法施行令第7条の4）
+下位の地物型として定義されていない地区整備計画を定義したい場合には、この地物型を使用し、属性urf::種類で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictDevelopmentPlanType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="districtFacilitiesAllocation"/>
+          <element minOccurs="0" name="buildingRestrictions"/>
+          <element minOccurs="0" name="urbanGreenSpaceConservation"/>
+          <element minOccurs="0" name="activityRestrictionInFarmland"/>
+          <element minOccurs="0" name="landuseRestrictions"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="districtFacility">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:DistrictFacility"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="district">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:District"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictDevelopmentPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictDevelopmentPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictFacility" substitutionGroup="urf:Zone" type="urf:DistrictFacilityType">
+    <annotation>
+      <documentation>地区計画において定められる以下の施設。
+	- 主として街区内の居住者等の利用に供される道路、公園その他の政令で定める施設
+	- 街区における防災上必要な機能を確保するための避難施設、避難路、雨水貯留浸透施設（雨水を一時的に貯留し、又は地下に浸透させる機能を有する施設であつて、浸水による被害の防止を目的とするものをいう。）その他の政令で定める施設
+（都市計画法第12条の5第5項第1号）
+ここで、都市計画法第12条の5第5項第1号の政令で定める施設は、道路又は公園、緑地、広場その他の公共空地とする。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictFacilityType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlan" substitutionGroup="urf:DistrictDevelopmentPlan" type="urf:DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType">
+    <annotation>
+      <documentation>主として街区内の居住者等の利用に供される道路、公園その他の政令で定める施設（地区施設）及び建築物等（特定建築物地区整備計画の区域内の建築物等を除く。）の整備並びに土地の利用に関して、地区防災施設の区域以外の防災街区整備地区計画の区域について定める計画。
+（都市計画法第14条第2項第11号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType">
+    <complexContent>
+      <extension base="urf:DistrictDevelopmentPlanType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrict" substitutionGroup="urf:DistrictDevelopmentPlan" type="urf:DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType">
+    <annotation>
+      <documentation>地域における歴史的風致の維持及び向上に関する法律第31条第2項第1号の規定による歴史的風致維持向上地区整備計画。
+（都市計画法第14条第2項第12号）
+主として街区内の居住者、滞在者その他の者の利用に供される道路、公園その他の政令で定める施設（都市計画法第4条第6項に規
+定する都市計画施設（地区施設）及び建築物等の整備並びに土地の利用に関する計画。
+（地域における歴史的風致の維持及び向上に関する法律第5条第3項）
+歴史的風致維持向上地区整備計画においては、次に掲げる事項を定めることができる。
+
+	1. 地区施設の配置及び規模
+	2. 建築物等の用途の制限、建築物の容積率（延べ面積の敷地面積に対する割合をいう。）の最高限度又は最低限度、建築物の建ぺい率（建築面積の敷地面積に対する割合をいう。）の最高限度、建築物の敷地面積又は建築面積の最低限度、壁面の位置の制限、壁面後退区域（壁面の位置の制限として定められた限度の線と敷地境界線との間の土地の区域をいう。次条において同じ。）における工作物（建築物を除く。次条において同じ。）の設置の制限、建築物等の高さの最高限度又は最低限度、建築物等の形態又は色彩その他の意匠の制限、建築物の緑化率（都市緑地法第三十四条第二項に規定する緑化率をいう。）の最低限度その他建築物等に関する事項で政令で定めるもの
+	3. 現に存する樹林地、草地その他の緑地で歴史的風致の維持及び向上を図るとともに、良好な居住環境を確保するため必要なものの保全に関する事項
+	4. 前三号に掲げるもののほか、土地の利用に関する事項で政令で定めるもの</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictDevelopmentPlanType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictPlan" substitutionGroup="urf:_AbstractDistrictPlan" type="urf:DistrictPlanType">
+    <annotation>
+      <documentation>建築物の建築形態、公共施設その他の施設の配置等からみて、一体としてそれぞれの区域の特性にふさわしい態様を備えた良好な環境の各街区を整備し、開発し、及び保全するための計画。
+（都市計画法第12条の4第1項第1号）
+地区計画については、都市計画法第12条の4第2項に定めるもののほか、都市計画に、1の事項を定めるものとするとともに、2及び3に掲げる事項を定めるよう努めるものとする。
+
+	1. 地区整備計画
+	2. 当該地区計画の目標
+	3. 当該区域の整備、開発及び保全に関する方針
+
+
+当該地区計画が、「促進区」を保持する場合、その促進区の種類により、「再開発等促進区を定める地区計画」又は「開発整備促進区を定める地区計画」となる。
+再開発等促進区又は開発整備促進区を定める地区計画においては、さらに、都市計画に、以下の1の事項を定めるものとするとともに、2の事項を定めるよう努めるものとする。
+
+	1. 道路、公園その他の政令で定める施設（都市計画施設及び地区施設を除く。）の配置及び規模
+	2. 土地利用に関する基本方針
+
+
+なお、地区計画等の下位型として定義されていない新たな地区計画を記述したい場合は、この地物型を使用し、属性「種類」でその内容を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictPlanType">
+    <complexContent>
+      <extension base="urf:_AbstractDistrictPlanType">
+        <sequence>
+          <element minOccurs="0" name="facilityAllocation"/>
+          <element minOccurs="0" name="landUsePolicy"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="DistrictsAndZones" substitutionGroup="urf:Zone" type="urf:DistrictsAndZonesType">
+    <annotation>
+      <documentation>都市計画法第8条に基づき、都市計画区域内の土地をその利用目的によって区分し、建築物などに対するルールを決め、土地の合理的な利用を図るために指定された区域。
+（都市計画法第8条第1項）
+
+下位の地物型として定義されていない地域地区を記述したい場合には、この地物型を使用し、属性「種類」によりその内容を識別する。
+下位の地物型が存在する地域地区を記述する場合には、その地物型を使用すること。</documentation>
+    </annotation>
+  </element>
+  <complexType name="DistrictsAndZonesType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="areaInTotal"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DistrictsAndZonesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:DistrictsAndZones"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="EconomicActivitySumType" substitutionGroup="gml:AbstractObject" type="urf:EconomicActivitySumTypeType"/>
+  <complexType name="EconomicActivitySumTypeType">
+    <sequence>
+      <element name="industryType"/>
+      <element name="number"/>
+    </sequence>
+  </complexType>
+  <complexType name="EconomicActivitySumTypePropertyType">
+    <sequence>
+      <element ref="urf:EconomicActivitySumType"/>
+    </sequence>
+  </complexType>
+  <element name="EconomicActivityType" substitutionGroup="gml:AbstractObject" type="urf:EconomicActivityTypeType"/>
+  <complexType name="EconomicActivityTypeType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="numberOfOffices" type="urf:EconomicActivitySumTypePropertyType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="numberOfEmployees" type="urf:EconomicActivitySumTypePropertyType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="retailSales" type="urf:EconomicActivitySumTypePropertyType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="manufactureShipments" type="urf:EconomicActivitySumTypePropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="EconomicActivityTypePropertyType">
+    <sequence>
+      <element ref="urf:EconomicActivityType"/>
+    </sequence>
+  </complexType>
+  <element name="EducationalAndCulturalFacility" substitutionGroup="urf:UrbanFacility" type="urf:EducationalAndCulturalFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第5号に定める学校、図書館、研究施設その他の教育文化施設。
+（都市計画法第11条第1項第5号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="EducationalAndCulturalFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="EducationalAndCulturalFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:EducationalAndCulturalFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ExceptionalFloorAreaRateDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:ExceptionalFloorAreaRateDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第2号の3で定められる地区。
+第一種中高層住居専用地域、第二種中高層住居専用地域、第一種住居地域、第二種住居地域、準住居地域、近隣商業地域、商業地域、準工業地域又は工業地域内の適正な配置及び規模の公共施設を備えた土地の区域において、建築基準法第五十二条第一項から第九項までの規定による建築物の容積率の限度からみて未利用となつている建築物の容積の活用を促進して土地の高度利用を図るため定める地区。
+（都市計画法第8条第1項第2号の3）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ExceptionalFloorAreaRateDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="buildingHeightLimits"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ExceptionalFloorAreaRateDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ExceptionalFloorAreaRateDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FarmlandConversionType" substitutionGroup="gml:AbstractObject" type="urf:FarmlandConversionTypeType"/>
+  <complexType name="FarmlandConversionTypeType">
+    <sequence>
+      <element name="id"/>
+      <element minOccurs="0" name="yearOfDiversion"/>
+      <element minOccurs="0" name="isDesignated"/>
+    </sequence>
+  </complexType>
+  <complexType name="FarmlandConversionTypePropertyType">
+    <sequence>
+      <element ref="urf:FarmlandConversionType"/>
+    </sequence>
+  </complexType>
+  <element name="FirePreventionDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:FirePreventionDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第5号で定められる地区。
+市街地における火災の危険を防除するため定める地域。
+（都市計画法第8条第1項第5号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="FirePreventionDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FirePreventionDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:FirePreventionDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FireProtectionFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:FireProtectionFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める防火の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="FireProtectionFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FireProtectionFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:FireProtectionFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FloodPreventionFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:FloodPreventionFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める防水の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="FloodPreventionFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FloodPreventionFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:FloodPreventionFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FloodingDamageType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:FloodingDamageTypeType"/>
+  <complexType name="FloodingDamageTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="disasterId"/>
+          <element name="areaName"/>
+          <element name="dateOfOccuring"/>
+          <element name="damagedArea"/>
+          <element name="numberOfHousesFloodedAboveFloorLevel"/>
+          <element name="numberOfHousesFloodedBelowFloorLevel"/>
+          <element name="note"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FloodingDamageTypePropertyType">
+    <sequence>
+      <element ref="urf:FloodingDamageType"/>
+    </sequence>
+  </complexType>
+  <element name="ForestConversionType" substitutionGroup="gml:AbstractObject" type="urf:ForestConversionTypeType"/>
+  <complexType name="ForestConversionTypeType">
+    <sequence>
+      <element name="id"/>
+      <element minOccurs="0" name="yearOfDiversion"/>
+    </sequence>
+  </complexType>
+  <complexType name="ForestConversionTypePropertyType">
+    <sequence>
+      <element ref="urf:ForestConversionType"/>
+    </sequence>
+  </complexType>
+  <element name="GlobalHubCityDevelopmentProject" substitutionGroup="urf:Zone" type="urf:GlobalHubCityDevelopmentProjectType"/>
+  <complexType name="GlobalHubCityDevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="implementationBody"/>
+          <element minOccurs="0" name="implementationPeriod"/>
+          <element minOccurs="0" name="plan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GlobalHubCityDevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:GlobalHubCityDevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="GreenSpace" substitutionGroup="urf:_UrbanFunction" type="urf:GreenSpaceType"/>
+  <complexType name="GreenSpaceType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GreenSpacePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:GreenSpace"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="GreenSpaceAreaType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:GreenSpaceAreaTypeType"/>
+  <complexType name="GreenSpaceAreaTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element name="totalGreenArea"/>
+          <element maxOccurs="unbounded" name="greenArea" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GreenSpaceAreaTypePropertyType">
+    <sequence>
+      <element ref="urf:GreenSpaceAreaType"/>
+    </sequence>
+  </complexType>
+  <element name="GreenSpaceConservationDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:GreenSpaceConservationDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第12号で定められる地区。
+都市緑地法（昭和四十八年法律第七十二号）第5条の規定による緑地保全地域。
+（都市計画法第8条第1項第12号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="GreenSpaceConservationDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GreenSpaceConservationDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:GreenSpaceConservationDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HeightControlDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:HeightControlDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第3号で定められる地区。
+用途地域内において市街地の環境を維持し、又は土地利用の増進を図るため、建築物の高さの最高限度又は最低限度を定める地区。
+（都市計画法第8条第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="HeightControlDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HeightControlDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HeightControlDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HighLevelUseDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:HighLevelUseDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第3号で定められる地区。
+用途地域内の市街地における土地の合理的かつ健全な高度利用と都市機能の更新とを図るため、建築物の容積率の最高限度及び最低限度、建築物の建蔽率の最高限度、建築物の建築面積の最低限度並びに壁面の位置の制限を定める地区。
+（都市計画法第8条第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="HighLevelUseDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element maxOccurs="unbounded" name="maximumFloorAreaRate"/>
+          <element maxOccurs="unbounded" name="minimumFloorAreaRate"/>
+          <element maxOccurs="unbounded" name="maximumBuildingCoverageRate"/>
+          <element maxOccurs="unbounded" name="minimumBuildingArea"/>
+          <element minOccurs="0" name="setbackSize"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HighLevelUseDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HighLevelUseDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HighRiseResidentialAttractionDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:HighRiseResidentialAttractionDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第2号の4で定められる地区。
+住居と住居以外の用途とを適正に配分し、利便性の高い高層住宅の建設を誘導するため、第一種住居地域、第二種住居地域、準住居地域、近隣商業地域又は準工業地域でこれらの地域に関する都市計画において建築基準法第五十二条第一項第二号に規定する建築物の容積率が十分の四十又は十分の五十と定められたものの内において、建築物の容積率の最高限度、建築物の建蔽率の最高限度及び建築物の敷地面積の最低限度を定める地区。
+（都市計画法第8条第1項第2号の4）</documentation>
+    </annotation>
+  </element>
+  <complexType name="HighRiseResidentialAttractionDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="floorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+          <element minOccurs="0" name="minimumSiteArea"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HighRiseResidentialAttractionDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HighRiseResidentialAttractionDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HistoricSceneryMaintenanceAndImprovementDistrictPlan" substitutionGroup="urf:_AbstractDistrictPlan" type="urf:HistoricSceneryMaintenanceAndImprovementDistrictPlanType">
+    <annotation>
+      <documentation>地域における歴史的風致の維持及び向上に関する法律（平成二十年法律第四十号）第31条第1項の規定による歴史的風致維持向上地区計画。
+（都市計画法第12条の4第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="HistoricSceneryMaintenanceAndImprovementDistrictPlanType">
+    <complexContent>
+      <extension base="urf:_AbstractDistrictPlanType">
+        <sequence>
+          <element minOccurs="0" name="landUsePolicy"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HistoricSceneryMaintenanceAndImprovementDistrictPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HistoricSceneryMaintenanceAndImprovementDistrictPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HousingControlArea" substitutionGroup="urf:DistrictsAndZones" type="urf:HousingControlAreaType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第4号の2で定められる地区。
+都市再生特別措置法（平成十四年法律第二十二号）第89条の規定による居住調整地域。
+（都市計画法第8条第1項第4号の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="HousingControlAreaType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HousingControlAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HousingControlArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HousingLandDevelopmentStatus" substitutionGroup="urf:_UrbanFunction" type="urf:HousingLandDevelopmentStatusType"/>
+  <complexType name="HousingLandDevelopmentStatusType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="ongoingArea"/>
+          <element minOccurs="0" name="completedArea"/>
+          <element minOccurs="0" name="projectArea"/>
+          <element name="projectCost"/>
+          <element name="totalProjectCost"/>
+          <element minOccurs="0" name="startDate"/>
+          <element minOccurs="0" name="endDate"/>
+          <element minOccurs="0" name="status"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HousingLandDevelopmentStatusPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HousingLandDevelopmentStatus"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="HubCity" substitutionGroup="urf:_UrbanFunction" type="urf:HubCityType"/>
+  <complexType name="HubCityType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HubCityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:HubCity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="IndicationMark" substitutionGroup="urf:PortrayalObject" type="urf:IndicationMarkType"/>
+  <complexType name="IndicationMarkType">
+    <complexContent>
+      <extension base="urf:PortrayalObjectType">
+        <sequence>
+          <element name="lod0Geometry"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="IndicationMarkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:IndicationMark"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="IndustrialParkDevelopmentProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:IndustrialParkDevelopmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第3号に定める事業。
+（都市計画法第12条第1項第3号）
+首都圏の近郊整備地帯及び都市開発区域の整備に関する法律（昭和三十三年法律第九十八号）による工業団地造成事業又は近畿圏の近郊整備区域及び都市開発区域の整備及び開発に関する法律（昭和三十九年法律第百四十五号）による工業団地造成事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="IndustrialParkDevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="publicFacilityAllocation"/>
+          <element name="residentialLandUsePlan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="IndustrialParkDevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:IndustrialParkDevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="InlandFloodingDamageType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:InlandFloodingDamageTypeType"/>
+  <complexType name="InlandFloodingDamageTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="disasterId"/>
+          <element name="areaName"/>
+          <element name="dateOfOccuring"/>
+          <element name="damagedArea"/>
+          <element name="numberOfHousesFloodedAboveFloorLevel"/>
+          <element name="numberOfHousesFloodedBelowFloorLevel"/>
+          <element name="maximumRainfallPerHour"/>
+          <element name="totalRainfall"/>
+          <element name="note"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="InlandFloodingDamageTypePropertyType">
+    <sequence>
+      <element ref="urf:InlandFloodingDamageType"/>
+    </sequence>
+  </complexType>
+  <element name="ItemRecordType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:ItemRecordTypeType"/>
+  <complexType name="ItemRecordTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element maxOccurs="unbounded" name="item" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ItemRecordTypePropertyType">
+    <sequence>
+      <element ref="urf:ItemRecordType"/>
+    </sequence>
+  </complexType>
+  <element name="LandPrice" substitutionGroup="urf:_UrbanFunction" type="urf:LandPriceType"/>
+  <complexType name="LandPriceType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="pointCode"/>
+          <element minOccurs="0" name="pointCodeOfLastYear"/>
+          <element minOccurs="0" name="fiscalYear"/>
+          <element minOccurs="0" name="landPrice"/>
+          <element minOccurs="0" name="variability"/>
+          <element minOccurs="0" name="isSelected"/>
+          <element minOccurs="0" name="isAddressChanged"/>
+          <element minOccurs="0" name="isAcreageChanged"/>
+          <element minOccurs="0" name="isUseChanged"/>
+          <element minOccurs="0" name="isBuildingStructureChanged"/>
+          <element minOccurs="0" name="isSupplyFacilitiesChanged"/>
+          <element minOccurs="0" name="isDistanceFromStationChanged"/>
+          <element minOccurs="0" name="isUseDistrictChanged"/>
+          <element minOccurs="0" name="isFirePrventionChanged"/>
+          <element minOccurs="0" name="isUrbanPlanAreaChanged"/>
+          <element minOccurs="0" name="isBuildingCoverageRateChanged"/>
+          <element minOccurs="0" name="isFloorAreaRateChanged"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="cityCode"/>
+          <element minOccurs="0" name="cityName"/>
+          <element minOccurs="0" name="location"/>
+          <element minOccurs="0" name="address"/>
+          <element minOccurs="0" name="acreage"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="useStatus"/>
+          <element minOccurs="0" name="useStatusDescription"/>
+          <element minOccurs="0" name="useType"/>
+          <element minOccurs="0" name="buildingStructure"/>
+          <element minOccurs="0" name="water"/>
+          <element minOccurs="0" name="gas"/>
+          <element minOccurs="0" name="sewage"/>
+          <element minOccurs="0" name="shape"/>
+          <element minOccurs="0" name="frontageRate"/>
+          <element minOccurs="0" name="depthRate"/>
+          <element name="storeysAboveGround"/>
+          <element minOccurs="0" name="storeysBelowGround"/>
+          <element minOccurs="0" name="frontageRoad"/>
+          <element minOccurs="0" name="frontageRoadDirection"/>
+          <element minOccurs="0" name="frontageRoadWidth"/>
+          <element minOccurs="0" name="stationSquare"/>
+          <element minOccurs="0" name="frontageRoadSurface"/>
+          <element minOccurs="0" name="sideRoad"/>
+          <element minOccurs="0" name="sideRoadDirection"/>
+          <element minOccurs="0" name="transportationFacilities"/>
+          <element minOccurs="0" name="surroundings"/>
+          <element minOccurs="0" name="stationName"/>
+          <element minOccurs="0" name="distanceFromStation"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="useDistrict"/>
+          <element minOccurs="0" name="firePrevention"/>
+          <element minOccurs="0" name="heightControl"/>
+          <element minOccurs="0" name="forest"/>
+          <element minOccurs="0" name="park"/>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="floorAreaRate"/>
+          <element minOccurs="0" name="extraFloorAreaRate"/>
+          <element minOccurs="0" name="isSame"/>
+          <element minOccurs="0" name="selectionStatus"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="landPriceHistory" type="urf:ValueByCodesPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="attributeHistory" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandPricePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandPrice"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandPriceAverageType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:LandPriceAverageTypeType"/>
+  <complexType name="LandPriceAverageTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="landPrice" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandPriceAverageTypePropertyType">
+    <sequence>
+      <element ref="urf:LandPriceAverageType"/>
+    </sequence>
+  </complexType>
+  <element name="LandReadjustmentProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:LandReadjustmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第1号に定める事業。
+（都市計画法第12条第1項第1号）
+土地区画整理法（昭和二十九年法律第百十九号）による土地区画整理事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="LandReadjustmentProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="publicFacilityAllocation"/>
+          <element name="buildingLotDevelopment"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandReadjustmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandReadjustmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandReadjustmentPromotionArea" substitutionGroup="urf:ProjectPromotionArea" type="urf:LandReadjustmentPromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の2第1項第2号で定められる区域。
+大都市地域における住宅及び住宅地の供給の促進に関する特別措置法第5条第1項の規定による土地区画整理促進区域。
+（都市計画法第10条の2第1項第2号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="LandReadjustmentPromotionAreaType">
+    <complexContent>
+      <extension base="urf:ProjectPromotionAreaType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandReadjustmentPromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandReadjustmentPromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopment" substitutionGroup="urf:ProjectPromotionArea" type="urf:LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType">
+    <annotation>
+      <documentation>都市計画法第10条の2第1項第4号で定められる区域。
+地方拠点都市地域の整備及び産業業務施設の再配置の促進に関する法律第19条第1項の規定による拠点業務市街地整備土地区画整理促進区域。
+（都市計画法第10条の2第1項第4号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType">
+    <complexContent>
+      <extension base="urf:ProjectPromotionAreaType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopment"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandUseDiversion" substitutionGroup="urf:_UrbanFunction" type="urf:LandUseDiversionType"/>
+  <complexType name="LandUseDiversionType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="farmlandConversionType" type="urf:FarmlandConversionTypePropertyType"/>
+          <element minOccurs="0" name="forestConversionType" type="urf:ForestConversionTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandUseDiversionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandUseDiversion"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandUseType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:LandUseTypeType"/>
+  <complexType name="LandUseTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element name="use"/>
+          <element name="area"/>
+          <element minOccurs="0" name="vacancy"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandUseTypePropertyType">
+    <sequence>
+      <element ref="urf:LandUseType"/>
+    </sequence>
+  </complexType>
+  <element name="LandscapeZone" substitutionGroup="urf:DistrictsAndZones" type="urf:LandscapeZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第6号で定められる地区。
+景観法（平成十六年法律第百十号）第61条第1項の規定による景観地区。
+（都市計画法第8条第1項第6号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="LandscapeZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="buildingDesignRestriction"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="minimumSiteArea"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandscapeZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:LandscapeZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandslideDamageType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:LandslideDamageTypeType"/>
+  <complexType name="LandslideDamageTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="disasterId"/>
+          <element name="areaName"/>
+          <element name="dateOfOccuring"/>
+          <element name="damagedArea"/>
+          <element name="numberOfDamagedHouses"/>
+          <element name="note"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandslideDamageTypePropertyType">
+    <sequence>
+      <element ref="urf:LandslideDamageType"/>
+    </sequence>
+  </complexType>
+  <element name="LanduseIDAttribute" substitutionGroup="gml:AbstractObject" type="urf:LanduseIDAttributeType"/>
+  <complexType name="LanduseIDAttributeType">
+    <sequence>
+      <element name="id"/>
+    </sequence>
+  </complexType>
+  <complexType name="LanduseIDAttributePropertyType">
+    <sequence>
+      <element ref="urf:LanduseIDAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="LargeCustomerFacilityType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:LargeCustomerFacilityTypeType"/>
+  <complexType name="LargeCustomerFacilityTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element name="islRetailStore"/>
+          <element name="islCustomerAttractingFacility"/>
+          <element minOccurs="0" name="yearOpened"/>
+          <element minOccurs="0" name="yearClosed"/>
+          <element minOccurs="0" name="totalFloorArea"/>
+          <element minOccurs="0" name="facilityName"/>
+          <element minOccurs="0" name="facilityType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LargeCustomerFacilityTypePropertyType">
+    <sequence>
+      <element ref="urf:LargeCustomerFacilityType"/>
+    </sequence>
+  </complexType>
+  <element name="MarketsSlaughterhousesCrematoria" substitutionGroup="urf:UrbanFacility" type="urf:MarketsSlaughterhousesCrematoriaType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第7号に定める市場、と畜場又は火葬場。
+（都市計画法第11条第1項第7号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="MarketsSlaughterhousesCrematoriaType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MarketsSlaughterhousesCrematoriaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:MarketsSlaughterhousesCrematoria"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MedicalFacility" substitutionGroup="urf:UrbanFacility" type="urf:MedicalFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第6号に定める病院その他の医療施設。
+（都市計画法第11条第1項第6号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="MedicalFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MedicalFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:MedicalFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NaturalConditions" substitutionGroup="urf:_UrbanFunction" type="urf:NaturalConditionsType"/>
+  <complexType name="NaturalConditionsType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NaturalConditionsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:NaturalConditions"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NewHousing" substitutionGroup="urf:_UrbanFunction" type="urf:NewHousingType"/>
+  <complexType name="NewHousingType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="purpose"/>
+          <element minOccurs="0" name="developer"/>
+          <element minOccurs="0" name="yearOfConstruction"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NewHousingPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:NewHousing"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NewHousingAndUrbanDevelopmentProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:NewHousingAndUrbanDevelopmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第2号に定める事業。
+（都市計画法第12条第1項第2号）
+新住宅市街地開発法（昭和三十八年法律第百三十四号）による新住宅市街地開発事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="NewHousingAndUrbanDevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="housing"/>
+          <element name="publicFacilityAllocation"/>
+          <element name="residentialLandUsePlan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NewHousingAndUrbanDevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:NewHousingAndUrbanDevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NewUrbanInfrastructureProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:NewUrbanInfrastructureProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第5号に定める事業。
+（都市計画法第12条第1項第5号）
+新都市基盤整備法（昭和四十七年法律第八十六号）による新都市基盤整備事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="NewUrbanInfrastructureProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="landForCentralPublicFacilities"/>
+          <element name="districtsAllocation"/>
+          <element name="landUsePlan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NewUrbanInfrastructureProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:NewUrbanInfrastructureProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NumberOfEmploees" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:NumberOfEmploeesType"/>
+  <complexType name="NumberOfEmploeesType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="numberOfEmployees"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfEmploeesPropertyType">
+    <sequence>
+      <element ref="urf:NumberOfEmploees"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfEmployeesByIndustryCategoryType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:NumberOfEmployeesByIndustryCategoryTypeType"/>
+  <complexType name="NumberOfEmployeesByIndustryCategoryTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="numberOfEmployeesByIndustoryCategory" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfEmployeesByIndustryCategoryTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfEmployeesByIndustryCategoryType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfEmployeesByOccupationType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:NumberOfEmployeesByOccupationTypeType"/>
+  <complexType name="NumberOfEmployeesByOccupationTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="numberOfEmployeesByOccupation" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfEmployeesByOccupationTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfEmployeesByOccupationType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfHouseholdsByOwnershipType" substitutionGroup="urf:NumberOfHouseholdsType" type="urf:NumberOfHouseholdsByOwnershipTypeType"/>
+  <complexType name="NumberOfHouseholdsByOwnershipTypeType">
+    <complexContent>
+      <extension base="urf:NumberOfHouseholdsTypeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfHouseholdsByOwnershipTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfHouseholdsByOwnershipType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfHouseholdsByStructureType" substitutionGroup="urf:NumberOfHouseholdsType" type="urf:NumberOfHouseholdsByStructureTypeType"/>
+  <complexType name="NumberOfHouseholdsByStructureTypeType">
+    <complexContent>
+      <extension base="urf:NumberOfHouseholdsTypeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfHouseholdsByStructureTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfHouseholdsByStructureType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfHouseholdsType" substitutionGroup="gml:AbstractObject" type="urf:NumberOfHouseholdsTypeType"/>
+  <complexType name="NumberOfHouseholdsTypeType">
+    <sequence>
+      <element name="urf::class"/>
+      <element name="urf::number"/>
+    </sequence>
+  </complexType>
+  <complexType name="NumberOfHouseholdsTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfHouseholdsType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfHouseholdsType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:NumberOfHouseholdsTypeType"/>
+  <complexType name="NumberOfHouseholdsTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element name="value" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NumberOfHouseholdsTypePropertyType">
+    <sequence>
+      <element ref="urf:NumberOfHouseholdsType"/>
+    </sequence>
+  </complexType>
+  <element name="ObservationPoint" substitutionGroup="gml:AbstractObject" type="urf:ObservationPointType"/>
+  <complexType name="ObservationPointType">
+    <sequence>
+      <element name="lod0MultiPoint"/>
+    </sequence>
+  </complexType>
+  <complexType name="ObservationPointPropertyType">
+    <sequence>
+      <element ref="urf:ObservationPoint"/>
+    </sequence>
+  </complexType>
+  <element name="OpenSpaceForPublicUse" substitutionGroup="urf:UrbanFacility" type="urf:OpenSpaceForPublicUseType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第2号に定める公園、緑地、広場、墓園その他の公共空地。
+（都市計画法第11条第1項第2号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="OpenSpaceForPublicUseType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="parkAttribute" type="urf:ParkAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OpenSpaceForPublicUsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:OpenSpaceForPublicUse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ParkAttribute" substitutionGroup="gml:AbstractObject" type="urf:ParkAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第2号に定める公園。
+（都市計画法第11条第1項第2号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParkAttributeType">
+    <sequence>
+      <element minOccurs="0" name="parkSerialNumber"/>
+      <element minOccurs="0" name="parkSizeNumber"/>
+      <element minOccurs="0" name="parkTypeNumber"/>
+    </sequence>
+  </complexType>
+  <complexType name="ParkAttributePropertyType">
+    <sequence>
+      <element ref="urf:ParkAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="ParkingPlaceAttribute" substitutionGroup="gml:AbstractObject" type="urf:ParkingPlaceAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第1号に定める駐車場。
+（都市計画法第11条第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParkingPlaceAttributeType">
+    <sequence>
+      <element name="storeysAboveGround"/>
+      <element name="storeysBelowGround"/>
+    </sequence>
+  </complexType>
+  <complexType name="ParkingPlaceAttributePropertyType">
+    <sequence>
+      <element ref="urf:ParkingPlaceAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="ParkingPlaceDevelopmentZone" substitutionGroup="urf:DistrictsAndZones" type="urf:ParkingPlaceDevelopmentZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第8号で定められる地区。
+駐車場法（昭和三十二年法律第百六号）第3条第1項の規定による駐車場整備地区。
+（都市計画法第8条第1項第8号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParkingPlaceDevelopmentZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ParkingPlaceDevelopmentZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ParkingPlaceDevelopmentZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Pollution" substitutionGroup="urf:_UrbanFunction" type="urf:PollutionType"/>
+  <complexType name="PollutionType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="year"/>
+          <element minOccurs="0" name="cause"/>
+          <element minOccurs="0" name="damagedArea"/>
+          <element minOccurs="0" name="observationPoint" type="urf:ObservationPointPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PollutionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Pollution"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PollutionType" substitutionGroup="gml:AbstractObject" type="urf:PollutionTypeType"/>
+  <complexType name="PollutionTypeType">
+    <sequence>
+      <element name="id"/>
+      <element name="type"/>
+      <element name="year"/>
+      <element name="cause"/>
+      <element name="damagedArea"/>
+    </sequence>
+  </complexType>
+  <complexType name="PollutionTypePropertyType">
+    <sequence>
+      <element ref="urf:PollutionType"/>
+    </sequence>
+  </complexType>
+  <element name="PopulationByAgeAndSexType" substitutionGroup="gml:AbstractObject" type="urf:PopulationByAgeAndSexTypeType"/>
+  <complexType name="PopulationByAgeAndSexTypeType">
+    <sequence>
+      <element name="ageAndSex"/>
+      <element minOccurs="0" name="number"/>
+    </sequence>
+  </complexType>
+  <complexType name="PopulationByAgeAndSexTypePropertyType">
+    <sequence>
+      <element ref="urf:PopulationByAgeAndSexType"/>
+    </sequence>
+  </complexType>
+  <element name="PopulationType" substitutionGroup="gml:AbstractObject" type="urf:PopulationTypeType"/>
+  <complexType name="PopulationTypeType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="population" type="urf:PopulationByAgeAndSexTypePropertyType"/>
+      <element minOccurs="0" name="populationDensity"/>
+    </sequence>
+  </complexType>
+  <complexType name="PopulationTypePropertyType">
+    <sequence>
+      <element ref="urf:PopulationType"/>
+    </sequence>
+  </complexType>
+  <element name="PortZone" substitutionGroup="urf:DistrictsAndZones" type="urf:PortZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第9号で定められる地区。
+港湾を管理運営するため定める地区。
+（都市計画法第8条第1項第9号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="PortZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="floorAreaRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PortZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:PortZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PortrayalObject" substitutionGroup="gml:AbstractFeature" type="urf:PortrayalObjectType"/>
+  <complexType name="PortrayalObjectType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="dmCode"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PortrayalObjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:PortrayalObject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PrivateUrbanRenewalProjectPlan" substitutionGroup="urf:Zone" type="urf:PrivateUrbanRenewalProjectPlanType"/>
+  <complexType name="PrivateUrbanRenewalProjectPlanType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="developer"/>
+          <element minOccurs="0" name="plan"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PrivateUrbanRenewalProjectPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:PrivateUrbanRenewalProjectPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ProductiveGreenZone" substitutionGroup="urf:DistrictsAndZones" type="urf:ProductiveGreenZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第14号で定められる地区。
+生産緑地法（昭和四十九年法律第六十八号）第3条第1項の規定による生産緑地地区。
+（都市計画法第8条第1項第14号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ProductiveGreenZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="zoneNumber"/>
+          <element minOccurs="0" name="specificication"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ProductiveGreenZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ProductiveGreenZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ProjectPromotionArea" substitutionGroup="urf:Zone" type="urf:ProjectPromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の2に基づき、都市計画区域に定められた区域。
+下位の地物型として定義されていない促進区域を記述したい場合には、この地物型を使用し、属性「種類」でその内容を識別する。
+（都市計画法第10条の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ProjectPromotionAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="developmentPolicy"/>
+          <element minOccurs="0" name="publicFacilitiesPlans"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ProjectPromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ProjectPromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PromotionDistrict" substitutionGroup="urf:Zone" type="urf:PromotionDistrictType">
+    <annotation>
+      <documentation>特定の条件に該当する土地の区域における地区計画について定められた、開発整備を実施すべき区域。
+
+都市計画法第12条の5第4項に定める「再開発等促進区」、同第5項に定める「開発整備促進区」、幹線道路の沿道の整備に関する法律第9条第3項に定める「沿道再開発等促進区」。</documentation>
+    </annotation>
+  </element>
+  <complexType name="PromotionDistrictType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PromotionDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:PromotionDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PublicLandType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:PublicLandTypeType"/>
+  <complexType name="PublicLandTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element name="ownerType"/>
+          <element name="category"/>
+          <element name="area"/>
+          <element name="status"/>
+          <element name="note"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PublicLandTypePropertyType">
+    <sequence>
+      <element ref="urf:PublicLandType"/>
+    </sequence>
+  </complexType>
+  <element name="PublicTransitFacility" substitutionGroup="urf:_UrbanFunction" type="urf:PublicTransitFacilityType"/>
+  <complexType name="PublicTransitFacilityType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="companyName"/>
+          <element minOccurs="0" name="companyType"/>
+          <element minOccurs="0" name="facilityType"/>
+          <element minOccurs="0" name="sectionName"/>
+          <element minOccurs="0" name="frequencyOfService"/>
+          <element minOccurs="0" name="numberOfCustomers"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PublicTransitFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:PublicTransitFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="QuasiUrbanPlanningArea" substitutionGroup="urf:Zone" type="urf:QuasiUrbanPlanningAreaType">
+    <annotation>
+      <documentation>そのまま土地利用を整序し、又は環境を保全するための措置を講ずることなく放置すれば、将来における一体の都市としての整備、開発及び保全に支障が生じるおそれがあると認められる一定の区域。
+（都市計画法第5条の2第1項）</documentation>
+    </annotation>
+  </element>
+  <complexType name="QuasiUrbanPlanningAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="population"/>
+          <element minOccurs="0" name="cityArea"/>
+          <element minOccurs="0" name="cityPopulation"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="QuasiUrbanPlanningAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:QuasiUrbanPlanningArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RailwayType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:RailwayTypeType"/>
+  <complexType name="RailwayTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="railwayType"/>
+          <element name="companyType"/>
+          <element name="routeName"/>
+          <element name="stationName"/>
+          <element name="companyName"/>
+          <element name="frequencyOfService"/>
+          <element name="numberOfCustomers"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RailwayTypePropertyType">
+    <sequence>
+      <element ref="urf:RailwayType"/>
+    </sequence>
+  </complexType>
+  <element name="RecreationType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:RecreationTypeType"/>
+  <complexType name="RecreationTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="id"/>
+          <element name="name"/>
+          <element name="type"/>
+          <element name="custodian"/>
+          <element name="capacity"/>
+          <element name="numberOfUser"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RecreationTypePropertyType">
+    <sequence>
+      <element ref="urf:RecreationType"/>
+    </sequence>
+  </complexType>
+  <element name="Recreations" substitutionGroup="urf:_UrbanFunction" type="urf:RecreationsType"/>
+  <complexType name="RecreationsType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="capacity"/>
+          <element minOccurs="0" name="numberOfUsers"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RecreationsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Recreations"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Regulation" substitutionGroup="urf:Zone" type="urf:RegulationType"/>
+  <complexType name="RegulationType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RegulationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Regulation"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ReportingUnit" substitutionGroup="gml:AbstractObject" type="urf:ReportingUnitType"/>
+  <complexType name="ReportingUnitType">
+    <choice>
+      <element name="subregion" type="urf:SubregionNamePropertyType"/>
+      <element name="urbanArea"/>
+    </choice>
+  </complexType>
+  <complexType name="ReportingUnitPropertyType">
+    <sequence>
+      <element ref="urf:ReportingUnit"/>
+    </sequence>
+  </complexType>
+  <element name="ResidenceAttractionArea" substitutionGroup="urf:Zone" type="urf:ResidenceAttractionAreaType"/>
+  <complexType name="ResidenceAttractionAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResidenceAttractionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ResidenceAttractionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResidentialBlockConstructionProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:ResidentialBlockConstructionProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第6号に定める事業。
+（都市計画法第12条第1項第6号）
+大都市地域における住宅及び住宅地の供給の促進に関する特別措置法による住宅街区整備事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="ResidentialBlockConstructionProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="publicFacilityAllocation"/>
+          <element minOccurs="0" name="developmentPlan"/>
+          <element minOccurs="0" name="siteArea"/>
+          <element minOccurs="0" name="totalFloorArea"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResidentialBlockConstructionProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ResidentialBlockConstructionProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResidentialBlockConstructionPromotionArea" substitutionGroup="urf:ProjectPromotionArea" type="urf:ResidentialBlockConstructionPromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の2第1項第3号で定められる区域。
+大都市地域における住宅及び住宅地の供給の促進に関する特別措置法第24条第1項の規定による住宅街区整備促進区域。
+（都市計画法第10条の2第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ResidentialBlockConstructionPromotionAreaType">
+    <complexContent>
+      <extension base="urf:ProjectPromotionAreaType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResidentialBlockConstructionPromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ResidentialBlockConstructionPromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResidentialDevelopmentType" substitutionGroup="gml:AbstractObject" type="urf:ResidentialDevelopmentTypeType"/>
+  <complexType name="ResidentialDevelopmentTypeType">
+    <sequence>
+      <element name="id"/>
+      <element minOccurs="0" name="area"/>
+      <element minOccurs="0" name="projectPeriod"/>
+      <element minOccurs="0" name="purpose"/>
+      <element minOccurs="0" name="status"/>
+      <element minOccurs="0" name="note"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResidentialDevelopmentTypePropertyType">
+    <sequence>
+      <element ref="urf:ResidentialDevelopmentType"/>
+    </sequence>
+  </complexType>
+  <element name="ResidentialEnvironmentImprovementDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:ResidentialEnvironmentImprovementDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第4号の2で定められる地区。
+都市再生特別措置法（平成十四年法律第二十二号）第94条の2第1項の規定による居住環境向上用途誘導地区。
+（都市計画法第8条第1項第4号の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ResidentialEnvironmentImprovementDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="useToBeInduced"/>
+          <element minOccurs="0" name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="maximumBuildingCoverageRate"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResidentialEnvironmentImprovementDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ResidentialEnvironmentImprovementDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ResidentialLandDevelopmentType" substitutionGroup="gml:AbstractObject" type="urf:ResidentialLandDevelopmentTypeType"/>
+  <complexType name="ResidentialLandDevelopmentTypeType">
+    <sequence>
+      <element minOccurs="0" name="startDate"/>
+      <element minOccurs="0" name="endDate"/>
+      <element minOccurs="0" name="costUpToLastFiscalYear"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResidentialLandDevelopmentTypePropertyType">
+    <sequence>
+      <element ref="urf:ResidentialLandDevelopmentType"/>
+    </sequence>
+  </complexType>
+  <element name="Resource" substitutionGroup="gml:AbstractObject" type="urf:ResourceType"/>
+  <complexType name="ResourceType">
+    <sequence>
+      <element name="name"/>
+      <element name="referenceDate"/>
+      <element name="authority"/>
+      <element minOccurs="0" name="url"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResourcePropertyType">
+    <sequence>
+      <element ref="urf:Resource"/>
+    </sequence>
+  </complexType>
+  <element name="ResourceTable" substitutionGroup="gml:AbstractObject" type="urf:ResourceTableType"/>
+  <complexType name="ResourceTableType">
+    <sequence>
+      <element maxOccurs="unbounded" name="resourceList" type="urf:ResourcePropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResourceTablePropertyType">
+    <sequence>
+      <element ref="urf:ResourceTable"/>
+    </sequence>
+  </complexType>
+  <element name="RoadWidthType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:RoadWidthTypeType"/>
+  <complexType name="RoadWidthTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="value" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoadWidthTypePropertyType">
+    <sequence>
+      <element ref="urf:RoadWidthType"/>
+    </sequence>
+  </complexType>
+  <element name="RoadsideDistrictFacility" substitutionGroup="urf:DistrictFacility" type="urf:RoadsideDistrictFacilityType">
+    <annotation>
+      <documentation>緑地その他の緩衝空地及び主として当該区域内の居住者等の利用に供される道路その他政令で定める施設。
+（幹線道路の沿道の整備に関する法律第9条第2項第1号）
+沿道地区計画において定められる。</documentation>
+    </annotation>
+  </element>
+  <complexType name="RoadsideDistrictFacilityType">
+    <complexContent>
+      <extension base="urf:DistrictFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoadsideDistrictFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RoadsideDistrictFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RoadsideDistrictImprovementPlan" substitutionGroup="urf:DistrictDevelopmentPlan" type="urf:RoadsideDistrictImprovementPlanType">
+    <annotation>
+      <documentation>密集市街地整備法第32条第2項第2号の規定による防災街区整備地区整備計画。
+（都市計画法第14条第2項第11号）
+緑地その他の緩衝空地及び主として当該区域内の居住者等の利用に供される道路その他政令で定める施設（都市計画施設（都市計画法第4条第6項に規定する都市計画施設をいう。以下同じ。）を除く。以下「沿道地区施設」という。）並びに建築物その他の工作物（以下「建築物等」という。）の整備並びに土地の利用その他の沿道の整備に関する計画。
+
+沿道地区整備計画においては、次に掲げる事項を定めることができる。
+
+	1. 沿道地区施設の配置及び規模
+	2. 建築物の沿道整備道路に係る間口率（建築物の沿道整備道路に面する部分の長さの敷地の沿道整備道路に接する部分の長さに対する割合をいう。以下同じ。）の最低限度、建築物の構造に関する防音上又は遮音上必要な制限、建築物等の高さの最高限度又は最低限度、壁面の位置の制限、壁面後退区域（壁面の位置の制限として定められた限度の線と敷地境界線との間の土地の区域をいう。以下同じ。）における工作物の設置の制限、建築物の容積率（延べ面積の敷地面積に対する割合をいう。以下同じ。）の最高限度又は最低限度、建築物の建ぺい率（建築面積の敷地面積に対する割合をいう。以下同じ。）の最高限度、建築物等の用途の制限、建築物の敷地面積又は建築面積の最低限度、建築物等の形態又は色彩その他の意匠の制限、建築物の緑化率（都市緑地法（昭和四十八年法律第七十二号）第34条第2項に規定する緑化率をいう。）の最低限度その他建築物等に関する事項で政令で定めるもの
+	3. 現に存する樹林地、草地等で良好な居住環境を確保するため必要なものの保全に関する事項
+	4. 前3号に掲げるもののほか、土地の利用に関する事項その他の沿道の整備に関する事項で政令で定めるもの</documentation>
+    </annotation>
+  </element>
+  <complexType name="RoadsideDistrictImprovementPlanType">
+    <complexContent>
+      <extension base="urf:DistrictDevelopmentPlanType">
+        <sequence>
+          <element minOccurs="0" name="roadsideDistrictFacilitiesAllocation"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoadsideDistrictImprovementPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RoadsideDistrictImprovementPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RoadsideDistrictPlan" substitutionGroup="urf:_AbstractDistrictPlan" type="urf:RoadsideDistrictPlanType">
+    <annotation>
+      <documentation>幹線道路の沿道の整備に関する法律（昭和五十五年法律第三十四号）第9条第1項の規定による沿道地区計画。
+（都市計画法第12条の4第1項第4号）
+沿道地区計画については、都市計画法第12条の4第2項に定める事項のほか、都市計画に、以下に示す幹線道路の沿道の整備に関する法律第9条第2項第1号に掲げる事項を定めるものとするとともに、第2号に掲げる事項を定めるよう努めるものとする。
+
+	1. 沿道地区整備計画
+	2. 沿道の整備に関する方針
+
+
+当該沿道地区計画が促進区を保持する場合、「沿道再開発等促進区を定める沿道地区計画」となる。
+沿道再開発等促進区を定める沿道地区計画においては、幹線道路の沿道の整備に関する法律第9条第2項第各号に掲げるもののほか、都市計画に、同条第4項第1号に掲げる事項を定めるものとするとともに、第2号に掲げる事項を定めるよう努めるものとする。
+
+	1. 道路、公園その他の政令で定める施設（都市計画施設及び沿道地区施設を除く。）の配置及び規模
+	2. 土地利用に関する基本方針</documentation>
+    </annotation>
+  </element>
+  <complexType name="RoadsideDistrictPlanType">
+    <complexContent>
+      <extension base="urf:_AbstractDistrictPlanType">
+        <sequence>
+          <element minOccurs="0" name="facilitiesAllocation"/>
+          <element minOccurs="0" name="landUsePolicy"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoadsideDistrictPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RoadsideDistrictPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RuralDistrictFacility" substitutionGroup="urf:DistrictFacility" type="urf:RuralDistrictFacilityType">
+    <annotation>
+      <documentation>主として当該区域内の居住者等の利用に供される道路、公園その他の政令で定める施設。
+（集落地域整備法第5条第3項）
+集落地区計画において定められる。</documentation>
+    </annotation>
+  </element>
+  <complexType name="RuralDistrictFacilityType">
+    <complexContent>
+      <extension base="urf:DistrictFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RuralDistrictFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RuralDistrictFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RuralDistrictImprovementPlan" substitutionGroup="urf:DistrictDevelopmentPlan" type="urf:RuralDistrictImprovementPlanType">
+    <annotation>
+      <documentation>集落地域整備法第五条第三項の規定による集落地区整備計画
+（都市計画法第14条第2項第14号）
+主として当該区域内の居住者等の利用に供される道路、公園その他の政令で定める施設（集落地区施設）及び建築物その他の工作物（建築物等）の整備並びに土地の利用に関する計画
+（集落地域整備法第5条第3項）
+集落地区整備計画においては、次に掲げる事項を定めることができる。
+
+	1. 集落地区施設の配置及び規模
+	2. 建築物等の用途の制限、建築物の建築面積の敷地面積に対する割合の最高限度、建築物等の高さの最高限度、建築物等の形態又は色彩その他の意匠の制限その他建築物等に関する事項で政令で定めるもの
+	3. 現に存する樹林地、草地等で良好な居住環境を確保するため必要なものの保全に関する事項
+	4. 前三号に掲げるもののほか、土地の利用に関する事項で政令で定めるもの</documentation>
+    </annotation>
+  </element>
+  <complexType name="RuralDistrictImprovementPlanType">
+    <complexContent>
+      <extension base="urf:DistrictDevelopmentPlanType">
+        <sequence>
+          <element minOccurs="0" name="ruralDistrictFacilitiesAllocation"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RuralDistrictImprovementPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RuralDistrictImprovementPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="RuralDistrictPlan" substitutionGroup="urf:_AbstractDistrictPlan" type="urf:RuralDistrictPlanType">
+    <annotation>
+      <documentation>　集落地域整備法（昭和六十二年法律第六十三号）第5条第1項の規定による集落地区計画。
+（都市計画法第12条の4第1項第4号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="RuralDistrictPlanType">
+    <complexContent>
+      <extension base="urf:_AbstractDistrictPlanType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RuralDistrictPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:RuralDistrictPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SalesAmount" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:SalesAmountType"/>
+  <complexType name="SalesAmountType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="salesAmount"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SalesAmountPropertyType">
+    <sequence>
+      <element ref="urf:SalesAmount"/>
+    </sequence>
+  </complexType>
+  <element name="SandControlFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:SandControlFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める砂防の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SandControlFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SandControlFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SandControlFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScenicDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:ScenicDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第7号で定められる地区。
+都市の風致を維持するため定める地区。
+（都市計画法第8条第1項第7号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScenicDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="buildingHeightLimits"/>
+          <element minOccurs="0" name="wallSetbackDistanceWithRoad"/>
+          <element minOccurs="0" name="wallSetbaskDistanceWithAdjoiningLand"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScenicDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScenicDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScenicResource" substitutionGroup="urf:_UrbanFunction" type="urf:ScenicResourceType"/>
+  <complexType name="ScenicResourceType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="typeName"/>
+          <element minOccurs="0" name="address"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScenicResourcePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScenicResource"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilities" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第5号に定める一団地の官公庁施設の予定区域。
+（都市計画法第12条の2第1項第5号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilities"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForCollectiveHousingFacilities" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForCollectiveHousingFacilitiesType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第4号に定める区域の面積が二十ヘクタール以上の一団地の住宅施設の予定区域。
+（都市計画法第12条の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForCollectiveHousingFacilitiesType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForCollectiveHousingFacilitiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForCollectiveHousingFacilities"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForDistributionBusinessPark" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForDistributionBusinessParkType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第6号に定める流通業務団地の予定区域。
+（都市計画法第12条の2第1項第6号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForDistributionBusinessParkType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForDistributionBusinessParkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForDistributionBusinessPark"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForIndustrialParkDevelopmentProjects" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForIndustrialParkDevelopmentProjectsType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第2号に定める工業団地造成事業の予定区域。
+（都市計画法第12条の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForIndustrialParkDevelopmentProjectsType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForIndustrialParkDevelopmentProjectsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForIndustrialParkDevelopmentProjects"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForNewHousingAndUrbanDevelopmentProjects" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第1号に定める新住宅市街地開発事業の予定区域。
+（都市計画法第12条の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForNewHousingAndUrbanDevelopmentProjects"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForNewUrbanInfrastructureProjects" substitutionGroup="urf:ScheduledAreaForUrbanDevelopmentProject" type="urf:ScheduledAreaForNewUrbanInfrastructureProjectsType">
+    <annotation>
+      <documentation>都市計画法第12条の2第1項第3号に定める新都市基盤整備事業の予定区域。
+（都市計画法第12条の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForNewUrbanInfrastructureProjectsType">
+    <complexContent>
+      <extension base="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForNewUrbanInfrastructureProjectsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForNewUrbanInfrastructureProjects"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ScheduledAreaForUrbanDevelopmentProject" substitutionGroup="urf:Zone" type="urf:ScheduledAreaForUrbanDevelopmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条の2に定める事業。
+（都市計画法第12条の2）
+下位の地物型として定義されていない市街地開発事業等予定区域を定義したい場合には、この地物型を使用し、属性urf::種類で地物型を識別する。
+市街地開発事業等予定区域については、都市計画に、市街地開発事業等予定区域の種類、名称、区域、施行予定者を定めるものとするとともに、区域の面積その他の政令で定める事項を定めるよう努めるものとする。</documentation>
+    </annotation>
+  </element>
+  <complexType name="ScheduledAreaForUrbanDevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="scheduledExecutor"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ScheduledAreaForUrbanDevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ScheduledAreaForUrbanDevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SedimentDisasterProneArea" substitutionGroup="urf:Zone" type="urf:SedimentDisasterProneAreaType"/>
+  <complexType name="SedimentDisasterProneAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="disasterType"/>
+          <element name="areaType"/>
+          <element name="zoneNumber"/>
+          <element name="zoneName"/>
+          <element minOccurs="0" name="status"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SedimentDisasterProneAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SedimentDisasterProneArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SewerSystemAttribute" substitutionGroup="gml:AbstractObject" type="urf:SewerSystemAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第3号に定める下水道。
+（都市計画法第11条第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SewerSystemAttributeType">
+    <sequence>
+      <element minOccurs="0" name="startLocation"/>
+      <element minOccurs="0" name="endLocation"/>
+      <element minOccurs="0" name="systemType"/>
+      <element minOccurs="0" name="drainageArea"/>
+    </sequence>
+  </complexType>
+  <complexType name="SewerSystemAttributePropertyType">
+    <sequence>
+      <element ref="urf:SewerSystemAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="SnowProtectionFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:SnowProtectionFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める防雪の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SnowProtectionFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SnowProtectionFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SnowProtectionFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SocialWelfareFacility" substitutionGroup="urf:UrbanFacility" type="urf:SocialWelfareFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第6号に定める保育所その他の社会福祉施設。
+（都市計画法第11条第1項第6号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="SocialWelfareFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SocialWelfareFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SocialWelfareFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialGreenSpaceConservationDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialGreenSpaceConservationDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第12号で定められる地区。
+都市緑地法（昭和四十八年法律第七十二号）第十二条の規定による特別緑地保全地区。
+（都市計画法第8条第1項第12号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialGreenSpaceConservationDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="requirement"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialGreenSpaceConservationDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialGreenSpaceConservationDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialUrbanRenaissanceDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialUrbanRenaissanceDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第4号の2で定められる地区。
+都市再生特別措置法（平成十四年法律第二十二号）第三十六条第一項の規定による都市再生特別地区。
+（都市計画法第8条第1項第4号の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialUrbanRenaissanceDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="useToBeInduced"/>
+          <element name="maximumFloorAreaRate"/>
+          <element name="minimumFloorAreaRate"/>
+          <element name="maximumBuildingCoverageRate"/>
+          <element name="minimumBuildingArea"/>
+          <element name="maximumBuildingHeight"/>
+          <element name="setbackSize"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialUrbanRenaissanceDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialUrbanRenaissanceDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialUseAttractionDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialUseAttractionDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第4号の2で定められる地区。
+都市再生特別措置法（平成十四年法律第二十二号）第109条第1項の規定による特定用途誘導地区。
+（都市計画法第8条第1項第4号の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialUseAttractionDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="useToBeInduced"/>
+          <element name="maximumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumFloorAreaRate"/>
+          <element minOccurs="0" name="minimumBuildingArea"/>
+          <element minOccurs="0" name="maximumBuildingHeight"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialUseAttractionDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialUseAttractionDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialUseDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialUseDistrictType">
+    <annotation>
+      <documentation>用途地域内の一定の地区における当該地区の特性にふさわしい土地利用の増進、環境の保護等の特別の目的の実現を図るため当該用途地域の指定を補完して定める地区。
+（都市計画法第8条第1項第2号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialUseDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="buildingRestrictions"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialUseDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialUseDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialUseRestrictionDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialUseRestrictionDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第2号で定められる区域。
+用途地域が定められていない土地の区域（市街化調整区域を除く。）内において、その良好な環境の形成又は保持のため当該地域の特性に応じて合理的な土地利用が行われるよう、制限すべき特定の建築物等の用途の概要を定める地域。
+（都市計画法第8条第1項第2号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialUseRestrictionDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element minOccurs="0" name="buildingRestrictions"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialUseRestrictionDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialUseRestrictionDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecialZoneForPreservationOfHistoricalLandscape" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecialZoneForPreservationOfHistoricalLandscapeType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第10号で定められる地区。
+古都における歴史的風土の保存に関する特別措置法（昭和四十一年法律第一号）第六条第一項の規定による歴史的風土特別保存地区。
+（都市計画法第8条第1項第10号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecialZoneForPreservationOfHistoricalLandscapeType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecialZoneForPreservationOfHistoricalLandscapePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecialZoneForPreservationOfHistoricalLandscape"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecifiedBlock" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecifiedBlockType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第4号で定められる地区。
+市街地の整備改善を図るため街区の整備又は造成が行われる地区について、その街区内における建築物の容積率並びに建築物の高さの最高限度及び壁面の位置の制限を定める街区。
+（都市計画法第8条第1項第4号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecifiedBlockType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="floorAreaRate"/>
+          <element name="maximumBuildingHeight"/>
+          <element name="setbackSize"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecifiedBlockPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecifiedBlock"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecifiedBuildingZoneImprovementPlan" substitutionGroup="urf:DistrictDevelopmentPlan" type="urf:SpecifiedBuildingZoneImprovementPlanType">
+    <annotation>
+      <documentation>当該区域における特定防災機能を確保するための防災公共施設（都市計画施設を除く。以下「地区防災施設」という。）の区域（地区防災施設のうち建築物等と一体となって当該特定防災機能を確保するために整備されるべきもの（特定地区防災施設）にあっては、当該特定地区防災施設の区域及び当該建築物等の整備に関する計画。
+（都市計画法第14条第2項第11号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecifiedBuildingZoneImprovementPlanType">
+    <complexContent>
+      <extension base="urf:DistrictDevelopmentPlanType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecifiedBuildingZoneImprovementPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecifiedBuildingZoneImprovementPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecifiedDisasterPreventionBlockImprovementZone" substitutionGroup="urf:DistrictsAndZones" type="urf:SpecifiedDisasterPreventionBlockImprovementZoneType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第5号の2で定められる地区。
+密集市街地整備法第31条第1項の規定による特定防災街区整備地区。
+（都市計画法第8条第1項第5号の2）</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpecifiedDisasterPreventionBlockImprovementZoneType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="minimumSiteArea"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="minimumFrontageRate"/>
+          <element minOccurs="0" name="minimumBuildingHeight"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecifiedDisasterPreventionBlockImprovementZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecifiedDisasterPreventionBlockImprovementZone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SpecifiedUrgentUrbanRenewalArea" substitutionGroup="urf:UrgentUrbanRenewalArea" type="urf:SpecifiedUrgentUrbanRenewalAreaType"/>
+  <complexType name="SpecifiedUrgentUrbanRenewalAreaType">
+    <complexContent>
+      <extension base="urf:UrgentUrbanRenewalAreaType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="developmentProject">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:GlobalHubCityDevelopmentProject"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpecifiedUrgentUrbanRenewalAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SpecifiedUrgentUrbanRenewalArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="StructureDetails" substitutionGroup="gml:AbstractObject" type="urf:StructureDetailsType">
+    <annotation>
+      <documentation>道路及び都市高速鉄道の構造を区間ごとに記述するために使用する型。</documentation>
+    </annotation>
+  </element>
+  <complexType name="StructureDetailsType">
+    <sequence>
+      <element name="startLocation"/>
+      <element name="endLocation"/>
+      <element minOccurs="0" name="viaLocations"/>
+      <element minOccurs="0" name="length"/>
+      <element name="structureType"/>
+      <element minOccurs="0" name="minimumWidth"/>
+      <element minOccurs="0" name="maximumWidth"/>
+      <element minOccurs="0" name="standardWidth"/>
+      <element minOccurs="0" name="crossType"/>
+    </sequence>
+  </complexType>
+  <complexType name="StructureDetailsPropertyType">
+    <sequence>
+      <element ref="urf:StructureDetails"/>
+    </sequence>
+  </complexType>
+  <element name="SubregionName" substitutionGroup="gml:AbstractObject" type="urf:SubregionNameType"/>
+  <complexType name="SubregionNameType">
+    <sequence>
+      <element minOccurs="0" name="townName"/>
+      <element minOccurs="0" name="blockName"/>
+    </sequence>
+  </complexType>
+  <complexType name="SubregionNamePropertyType">
+    <sequence>
+      <element ref="urf:SubregionName"/>
+    </sequence>
+  </complexType>
+  <element name="SummaryRecordType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:SummaryRecordTypeType"/>
+  <complexType name="SummaryRecordTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element minOccurs="0" name="classCode"/>
+          <element minOccurs="0" name="classLabel"/>
+          <element maxOccurs="unbounded" name="item" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SummaryRecordTypePropertyType">
+    <sequence>
+      <element ref="urf:SummaryRecordType"/>
+    </sequence>
+  </complexType>
+  <element name="SupplyFacility" substitutionGroup="urf:UrbanFacility" type="urf:SupplyFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第3号に定める水道、電気供給施設、ガス供給施設その他の供給施設。
+（都市計画法第11条第1項第3号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="SupplyFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="waterWorksAttribute" type="urf:WaterWorksAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SupplyFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:SupplyFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Symbol" substitutionGroup="urf:PortrayalObject" type="urf:SymbolType"/>
+  <complexType name="SymbolType">
+    <complexContent>
+      <extension base="urf:PortrayalObjectType">
+        <sequence>
+          <element name="lod0Geometry"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SymbolPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Symbol"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TelecommunicationFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:TelecommunicationFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める電気通信事業の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="TelecommunicationFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TelecommunicationFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TelecommunicationFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ThreeDimensionalExtent" substitutionGroup="urf:_UrbanFunction" type="urf:ThreeDimensionalExtentType">
+    <annotation>
+      <documentation>都市計画法第11条第3項に定められる「都市施設」について、適正かつ合理的な土地利用を図るため必要があるときに当該都市施設の区域の地下又は空間設けられる当該都市施設を整備する立体的な範囲。</documentation>
+    </annotation>
+  </element>
+  <complexType name="ThreeDimensionalExtentType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="minimumDistance"/>
+          <element minOccurs="0" name="maximumLoad"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ThreeDimensionalExtentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ThreeDimensionalExtent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TideFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:TideFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める防潮の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="TideFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TideFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TideFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TotalAreaByLandUseType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:TotalAreaByLandUseTypeType"/>
+  <complexType name="TotalAreaByLandUseTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class" type="urf:UnitAreaPropertyType"/>
+          <element maxOccurs="unbounded" name="areaByLandUseType" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TotalAreaByLandUseTypePropertyType">
+    <sequence>
+      <element ref="urf:TotalAreaByLandUseType"/>
+    </sequence>
+  </complexType>
+  <element name="TotalEconomicStructureAndActivitiesType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:TotalEconomicStructureAndActivitiesTypeType"/>
+  <complexType name="TotalEconomicStructureAndActivitiesTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="economicStructureAndActivities" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TotalEconomicStructureAndActivitiesTypePropertyType">
+    <sequence>
+      <element ref="urf:TotalEconomicStructureAndActivitiesType"/>
+    </sequence>
+  </complexType>
+  <element name="TotalLandUseChangeClass" substitutionGroup="gml:AbstractObject" type="urf:TotalLandUseChangeClassType"/>
+  <complexType name="TotalLandUseChangeClassType">
+    <sequence>
+      <element minOccurs="0" name="urbanArea"/>
+      <element minOccurs="0" name="year"/>
+    </sequence>
+  </complexType>
+  <complexType name="TotalLandUseChangeClassPropertyType">
+    <sequence>
+      <element ref="urf:TotalLandUseChangeClass"/>
+    </sequence>
+  </complexType>
+  <element name="TotalLandUseChangeType" substitutionGroup="gml:AbstractObject" type="urf:TotalLandUseChangeTypeType"/>
+  <complexType name="TotalLandUseChangeTypeType">
+    <sequence>
+      <element name="class" type="urf:TotalLandUseChangeClassPropertyType"/>
+      <element maxOccurs="unbounded" name="total" type="urf:ValueByCodesPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="TotalLandUseChangeTypePropertyType">
+    <sequence>
+      <element ref="urf:TotalLandUseChangeType"/>
+    </sequence>
+  </complexType>
+  <element name="TotalLandUseDiversion" substitutionGroup="gml:AbstractObject" type="urf:TotalLandUseDiversionType"/>
+  <complexType name="TotalLandUseDiversionType">
+    <sequence>
+      <element name="unit" type="urf:ReportingUnitPropertyType"/>
+      <element name="year"/>
+      <element maxOccurs="unbounded" name="total" type="urf:ValueByCodesPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="TotalLandUseDiversionPropertyType">
+    <sequence>
+      <element ref="urf:TotalLandUseDiversion"/>
+    </sequence>
+  </complexType>
+  <element name="TotalNewHousing" substitutionGroup="gml:AbstractObject" type="urf:TotalNewHousingType"/>
+  <complexType name="TotalNewHousingType">
+    <sequence>
+      <element name="class"/>
+      <element maxOccurs="unbounded" name="total" type="urf:ValueByCodesPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="TotalNewHousingPropertyType">
+    <sequence>
+      <element ref="urf:TotalNewHousing"/>
+    </sequence>
+  </complexType>
+  <element name="TouristTripConsumptionType" substitutionGroup="urf:TravelAndTourismConsumptionType" type="urf:TouristTripConsumptionTypeType"/>
+  <complexType name="TouristTripConsumptionTypeType">
+    <complexContent>
+      <extension base="urf:TravelAndTourismConsumptionTypeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TouristTripConsumptionTypePropertyType">
+    <sequence>
+      <element ref="urf:TouristTripConsumptionType"/>
+    </sequence>
+  </complexType>
+  <element name="TrafficFacility" substitutionGroup="urf:UrbanFacility" type="urf:TrafficFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第1号に定める道路、都市高速鉄道、駐車場、自動車ターミナルその他の交通施設。
+（都市計画法第11条第1項第1号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="TrafficFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="startLocation"/>
+          <element minOccurs="0" name="endLocation"/>
+          <element minOccurs="0" name="viaLocations"/>
+          <element minOccurs="0" name="length"/>
+          <element minOccurs="0" name="width"/>
+          <element minOccurs="0" name="urbanRoadAttribute" type="urf:UrbanRoadAttributePropertyType"/>
+          <element minOccurs="0" name="urbanRapidTransitRailroadAttribute" type="urf:UrbanRapidTransitRailroadAttributePropertyType"/>
+          <element minOccurs="0" name="parkingPlaceAttribute" type="urf:ParkingPlaceAttributePropertyType"/>
+          <element minOccurs="0" name="vehicleTerminalAttribute" type="urf:VehicleTerminalAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrafficFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TrafficFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TrafficFlowVolumeType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:TrafficFlowVolumeTypeType"/>
+  <complexType name="TrafficFlowVolumeTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="departure"/>
+          <element maxOccurs="unbounded" name="destination" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrafficFlowVolumeTypePropertyType">
+    <sequence>
+      <element ref="urf:TrafficFlowVolumeType"/>
+    </sequence>
+  </complexType>
+  <element name="TrafficVolumeType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:TrafficVolumeTypeType"/>
+  <complexType name="TrafficVolumeTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="sectionId"/>
+          <element name="routeName"/>
+          <element name="observationPointName"/>
+          <element name="weekday12hourTrafficVolume"/>
+          <element name="weekday24hourTrafficVolume"/>
+          <element name="largeVehicleRate"/>
+          <element name="congestionRate"/>
+          <element name="averageTravelSpeedInCongestion"/>
+          <element name="averageInboundTravelSpeedInCongestion"/>
+          <element name="averageOutboundTravelSpeedInCongestion"/>
+          <element name="averageInboundTravelSpeedNoCongestion"/>
+          <element name="averageOutboundTravelSpeedNoCongestion"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrafficVolumeTypePropertyType">
+    <sequence>
+      <element ref="urf:TrafficVolumeType"/>
+    </sequence>
+  </complexType>
+  <element name="TransportationNode" substitutionGroup="gml:AbstractFeature" type="urf:TransportationNodeType"/>
+  <complexType name="TransportationNodeType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="urf::node"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TransportationNodePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TransportationNode"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TravelAndTourismConsumptionType" substitutionGroup="urf:UrbanPlanningBasicSurveyRecord" type="urf:TravelAndTourismConsumptionTypeType"/>
+  <complexType name="TravelAndTourismConsumptionTypeType">
+    <complexContent>
+      <extension base="urf:UrbanPlanningBasicSurveyRecordType">
+        <sequence>
+          <element name="class"/>
+          <element maxOccurs="unbounded" name="value" type="urf:ValueByCodesPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TravelAndTourismConsumptionTypePropertyType">
+    <sequence>
+      <element ref="urf:TravelAndTourismConsumptionType"/>
+    </sequence>
+  </complexType>
+  <element name="TreatmentFacility" substitutionGroup="urf:UrbanFacility" type="urf:TreatmentFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第3号に定める下水道、汚物処理場、ごみ焼却場その他の処理施設。
+（都市計画法第11条第1項第3号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="TreatmentFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="sewerSystemAttribute" type="urf:SewerSystemAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TreatmentFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TreatmentFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="TreePlantingDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:TreePlantingDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第12号で定められる地区。
+都市緑地法（昭和四十八年法律第七十二号）第三十四条第一項の規定による緑化地域。
+（都市計画法第8条第1項第12号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="TreePlantingDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="minimumGreeningRate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TreePlantingDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:TreePlantingDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UnclassifiedBlankArea" substitutionGroup="urf:Zone" type="urf:UnclassifiedBlankAreaType"/>
+  <complexType name="UnclassifiedBlankAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UnclassifiedBlankAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UnclassifiedBlankArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UnclassifiedUseDistrict" substitutionGroup="urf:Zone" type="urf:UnclassifiedUseDistrictType"/>
+  <complexType name="UnclassifiedUseDistrictType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UnclassifiedUseDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UnclassifiedUseDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UnitArea" substitutionGroup="gml:AbstractObject" type="urf:UnitAreaType"/>
+  <complexType name="UnitAreaType">
+    <choice>
+      <element name="subregionCode"/>
+      <element name="subregionName" type="urf:SubregionNamePropertyType"/>
+      <element name="meshCode"/>
+      <element name="urbanArea"/>
+    </choice>
+  </complexType>
+  <complexType name="UnitAreaPropertyType">
+    <sequence>
+      <element ref="urf:UnitArea"/>
+    </sequence>
+  </complexType>
+  <element name="UnusedLandUsePromotionArea" substitutionGroup="urf:Zone" type="urf:UnusedLandUsePromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の3第1項で定められる区域。
+市街化区域における遊休土地の有効利用を促進するために市町村が定める。
+（都市計画法第10条の3）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UnusedLandUsePromotionAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UnusedLandUsePromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UnusedLandUsePromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanDevelopmentProject" substitutionGroup="urf:Zone" type="urf:UrbanDevelopmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項に定める事業。
+（都市計画法第12条第1項）
+下位の地物型として定義されていない市街地開発事業を記述したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanDevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="scheduledExecutor"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanDevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanDevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanDevelopmentProjectType" substitutionGroup="gml:AbstractObject" type="urf:UrbanDevelopmentProjectTypeType"/>
+  <complexType name="UrbanDevelopmentProjectTypeType">
+    <sequence>
+      <element name="id"/>
+      <element minOccurs="0" name="dateOfDecision"/>
+      <element minOccurs="0" name="projectName"/>
+      <element minOccurs="0" name="plannedArea"/>
+      <element minOccurs="0" name="ongoingArea"/>
+      <element minOccurs="0" name="costUpToLastFiscalYear"/>
+      <element minOccurs="0" name="cost"/>
+      <element minOccurs="0" name="completedArea"/>
+      <element minOccurs="0" name="projectPeriod"/>
+      <element minOccurs="0" name="note"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanDevelopmentProjectTypePropertyType">
+    <sequence>
+      <element ref="urf:UrbanDevelopmentProjectType"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanDisasterRecoveryPromotionArea" substitutionGroup="urf:Zone" type="urf:UrbanDisasterRecoveryPromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の4第1項で定められる区域。
+大規模な災害により被害を受けた市街地の復興を推進するために定められる地域。被災市街地復興特別措置法に基づいて市町村が指定する。
+（都市計画法第10条の4第1項）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanDisasterRecoveryPromotionAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="expirationDate"/>
+          <element minOccurs="0" name="emergencyRecoveryPolicy"/>
+          <element minOccurs="0" name="plannedProjectType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanDisasterRecoveryPromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanDisasterRecoveryPromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanFacility" substitutionGroup="urf:Zone" type="urf:UrbanFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項各号に掲げる施設。
+（都市計画法第11条第1項）
+下位の地物型として定義されていない都市施設を記述したい場合には、この地物型を使用し、属性「種類」で地物型の内容を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanFacilityType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="number"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="threeDimensionalExtent">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:ThreeDimensionalExtent"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanFacilityStatus" substitutionGroup="urf:_UrbanFunction" type="urf:UrbanFacilityStatusType"/>
+  <complexType name="UrbanFacilityStatusType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element name="id"/>
+          <element minOccurs="0" name="dateOfDecision"/>
+          <element minOccurs="0" name="facilityName"/>
+          <element minOccurs="0" name="isPlanned"/>
+          <element minOccurs="0" name="isImplemented"/>
+          <element minOccurs="0" name="costUpToLastYear"/>
+          <element minOccurs="0" name="totalCost"/>
+          <element minOccurs="0" name="isCompleted"/>
+          <element minOccurs="0" name="startDate"/>
+          <element minOccurs="0" name="completedDate"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanFacilityStatusPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanFacilityStatus"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanFacilityStipulatedByCabinetOrder" substitutionGroup="urf:UrbanFacility" type="urf:UrbanFacilityStipulatedByCabinetOrderType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める施設。
+（都市計画法第11条第1項第15号）
+下位の地物型として定義されていない政令で定める都市施設を記述したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanFacilityStipulatedByCabinetOrderType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="length"/>
+          <element minOccurs="0" name="width"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanFacilityStipulatedByCabinetOrderPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanFacilityStipulatedByCabinetOrder"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanFacilitySurveyData" substitutionGroup="gml:AbstractObject" type="urf:UrbanFacilitySurveyDataType"/>
+  <complexType name="UrbanFacilitySurveyDataType">
+    <sequence/>
+  </complexType>
+  <complexType name="UrbanFacilitySurveyDataPropertyType">
+    <sequence>
+      <element ref="urf:UrbanFacilitySurveyData"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanFunctionAttractionArea" substitutionGroup="urf:Zone" type="urf:UrbanFunctionAttractionAreaType"/>
+  <complexType name="UrbanFunctionAttractionAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanFunctionAttractionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanFunctionAttractionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanParkAttribute" substitutionGroup="gml:AbstractObject" type="urf:UrbanParkAttributeType"/>
+  <complexType name="UrbanParkAttributeType">
+    <sequence>
+      <element name="parkCode"/>
+      <element name="startFrom">
+        <annotation>
+          <documentation>設置の年月日(供用開始)</documentation>
+        </annotation>
+      </element>
+      <element maxOccurs="unbounded" minOccurs="0" name="breakdownOfNominalArea" type="urf:BreakdownOfNominalAreaPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanParkAttributePropertyType">
+    <sequence>
+      <element ref="urf:UrbanParkAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanPlanningArea" substitutionGroup="urf:Zone" type="urf:UrbanPlanningAreaType">
+    <annotation>
+      <documentation>都市の実態や将来の計画を勘案して、一体の都市地域となるべき区域として指定された区域。
+複数の市区町村にまたがる都市計画区域の場合は、市区町村の境界で区切る。
+（都市計画法第5条第1項）
+定義文書：ref\urbanPlan.pdf</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanPlanningAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="areaClassification"/>
+          <element minOccurs="0" name="reasonForAreaClassification"/>
+          <element minOccurs="0" name="policyForAreaClassification"/>
+          <element minOccurs="0" name="purposeForUrbanPlan"/>
+          <element minOccurs="0" name="policyForUrbanPlanDecision"/>
+          <element minOccurs="0" name="population"/>
+          <element minOccurs="0" name="cityArea"/>
+          <element minOccurs="0" name="cityPopulation"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanPlanningAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanPlanningArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="UrbanPlanningBasicSurveyRecord" substitutionGroup="gml:AbstractObject" type="urf:UrbanPlanningBasicSurveyRecordType"/>
+  <complexType abstract="true" name="UrbanPlanningBasicSurveyRecordType">
+    <sequence/>
+  </complexType>
+  <complexType name="UrbanPlanningBasicSurveyRecordPropertyType">
+    <sequence>
+      <element ref="urf:UrbanPlanningBasicSurveyRecord"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanPlanningBasicSurveyTable" substitutionGroup="gml:AbstractObject" type="urf:UrbanPlanningBasicSurveyTableType"/>
+  <complexType name="UrbanPlanningBasicSurveyTableType">
+    <sequence>
+      <element name="prefecture"/>
+      <element minOccurs="0" name="city"/>
+      <element name="dataItemNumber"/>
+      <element name="tableName"/>
+      <element minOccurs="0" name="unit"/>
+      <element minOccurs="0" name="referenceDate"/>
+      <element maxOccurs="unbounded" name="record" type="urf:UrbanPlanningBasicSurveyRecordPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanPlanningBasicSurveyTablePropertyType">
+    <sequence>
+      <element ref="urf:UrbanPlanningBasicSurveyTable"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanPlanningDesicion" substitutionGroup="gml:AbstractObject" type="urf:UrbanPlanningDesicionType"/>
+  <complexType name="UrbanPlanningDesicionType">
+    <sequence>
+      <element name="surveyYear"/>
+      <element minOccurs="0" name="prefecture"/>
+      <element minOccurs="0" name="city"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanPlanningDesicionPropertyType">
+    <sequence>
+      <element ref="urf:UrbanPlanningDesicion"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanRapidTransitRailroadAttribute" substitutionGroup="gml:AbstractObject" type="urf:UrbanRapidTransitRailroadAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第1号に定める都市高速鉄道。
+（都市計画法第11条第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanRapidTransitRailroadAttributeType">
+    <sequence>
+      <element minOccurs="0" name="structureType"/>
+      <element minOccurs="0" name="crossType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="structuralDetails" type="urf:StructureDetailsPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanRapidTransitRailroadAttributePropertyType">
+    <sequence>
+      <element ref="urf:UrbanRapidTransitRailroadAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="UrbanRedevelopmentProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:UrbanRedevelopmentProjectType">
+    <annotation>
+      <documentation>都市計画法第12条第1項第4号に定める事業。
+（都市計画法第12条第1項第4号）
+都市再開発法による市街地再開発事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanRedevelopmentProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element name="publicFacilityAllocation"/>
+          <element name="developmentPlan"/>
+          <element minOccurs="0" name="housingTarget"/>
+          <element minOccurs="0" name="siteArea"/>
+          <element minOccurs="0" name="totalFloorArea"/>
+          <element minOccurs="0" name="numberOfHousing"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanRedevelopmentProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanRedevelopmentProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanRedevelopmentPromotionArea" substitutionGroup="urf:ProjectPromotionArea" type="urf:UrbanRedevelopmentPromotionAreaType">
+    <annotation>
+      <documentation>都市計画法第10条の2第1項第1号で定められる区域。
+都市再開発法第7条第1項の規定による市街地再開発促進区域。
+（都市計画法第10条の2第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanRedevelopmentPromotionAreaType">
+    <complexContent>
+      <extension base="urf:ProjectPromotionAreaType">
+        <sequence>
+          <element name="publicFacilities"/>
+          <element name="unitArea"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanRedevelopmentPromotionAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanRedevelopmentPromotionArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanRenewalProject" substitutionGroup="urf:UrbanDevelopmentProject" type="urf:UrbanRenewalProjectType">
+    <annotation>
+      <documentation>旧公共施設の整備に関連する市街地の改造に関する法律(昭和36年法律第109号)第3条で定められる、旧都市計画法(大正8年法律第36号)第3条の定める手続きによって都市計画として決定された事業。</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanRenewalProjectType">
+    <complexContent>
+      <extension base="urf:UrbanDevelopmentProjectType">
+        <sequence>
+          <element minOccurs="0" name="storeysAboveGround"/>
+          <element minOccurs="0" name="storeysBelowGround"/>
+          <element minOccurs="0" name="setbackSize"/>
+          <element minOccurs="0" name="floorAreaRate"/>
+          <element minOccurs="0" name="buildingUsage"/>
+          <element minOccurs="0" name="siteArea"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanRenewalProjectPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrbanRenewalProject"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrbanRoadAttribute" substitutionGroup="gml:AbstractObject" type="urf:UrbanRoadAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第1号に定める道路。
+（都市計画法第11条第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UrbanRoadAttributeType">
+    <sequence>
+      <element minOccurs="0" name="routeTypeNumber"/>
+      <element minOccurs="0" name="routeSizeNumber"/>
+      <element minOccurs="0" name="routeSerialNumber"/>
+      <element name="roadType"/>
+      <element minOccurs="0" name="numberOfLanes"/>
+      <element minOccurs="0" name="roadStructure"/>
+      <element minOccurs="0" name="structureType"/>
+      <element minOccurs="0" name="crossType"/>
+      <element minOccurs="0" name="trafficPlazas"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="structuralDetails" type="urf:StructureDetailsPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="UrbanRoadAttributePropertyType">
+    <sequence>
+      <element ref="urf:UrbanRoadAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="Urbanization" substitutionGroup="urf:_UrbanFunction" type="urf:UrbanizationType"/>
+  <complexType name="UrbanizationType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="period"/>
+          <element minOccurs="0" name="resources"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrbanizationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Urbanization"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UrgentUrbanRenewalArea" substitutionGroup="urf:Zone" type="urf:UrgentUrbanRenewalAreaType"/>
+  <complexType name="UrgentUrbanRenewalAreaType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="developmentPolicy"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="specialDistrict">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:SpecialUrbanRenaissanceDistrict"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="specifiedArea">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:SpecifiedUrgentUrbanRenewalArea"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="privateProject">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:PrivateUrbanRenewalProjectPlan"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UrgentUrbanRenewalAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UrgentUrbanRenewalArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="UseDistrict" substitutionGroup="urf:DistrictsAndZones" type="urf:UseDistrictType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第1号で定められる地域。
+第一種低層住居専用地域、第二種低層住居専用地域、第一種中高層住居専用地域、第二種中高層住居専用地域、第一種住居地域、第二種住居地域、準住居地域、田園住居地域、近隣商業地域、商業地域、準工業地域、工業地域又は工業専用地域。
+（都市計画法第8条第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="UseDistrictType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence>
+          <element name="floorAreaRate"/>
+          <element minOccurs="0" name="minimumSiteArea"/>
+          <element minOccurs="0" name="buildingCoverageRate"/>
+          <element minOccurs="0" name="wallSetbackDistance"/>
+          <element minOccurs="0" name="buildingHeightLimits"/>
+          <element minOccurs="0" name="buildingRestrictions"/>
+          <element minOccurs="0" name="otherRestrictions"/>
+          <element minOccurs="0" name="setbackRestrictions"/>
+          <element minOccurs="0" name="frontRoadRestrictions"/>
+          <element minOccurs="0" name="adjacentLandRestrictions"/>
+          <element minOccurs="0" name="northDirectionRestrictions"/>
+          <element minOccurs="0" name="shadeRegulation"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UseDistrictPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:UseDistrict"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ValueByCodes" substitutionGroup="gml:AbstractObject" type="urf:ValueByCodesType"/>
+  <complexType name="ValueByCodesType">
+    <sequence>
+      <element maxOccurs="unbounded" name="class"/>
+      <element minOccurs="0" name="intValue"/>
+      <element minOccurs="0" name="doubleValue"/>
+      <element minOccurs="0" name="measureValue"/>
+      <element minOccurs="0" name="stringValue"/>
+    </sequence>
+  </complexType>
+  <complexType name="ValueByCodesPropertyType">
+    <sequence>
+      <element ref="urf:ValueByCodes"/>
+    </sequence>
+  </complexType>
+  <element name="VehicleTerminalAttribute" substitutionGroup="gml:AbstractObject" type="urf:VehicleTerminalAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第1号に定める自動車ターミナル。
+（都市計画法第11条第1項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="VehicleTerminalAttributeType">
+    <sequence>
+      <element name="terminalType"/>
+    </sequence>
+  </complexType>
+  <complexType name="VehicleTerminalAttributePropertyType">
+    <sequence>
+      <element ref="urf:VehicleTerminalAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="WaterWorksAttribute" substitutionGroup="gml:AbstractObject" type="urf:WaterWorksAttributeType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第3号に定める水道。
+（都市計画法第11条第1項第3号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="WaterWorksAttributeType">
+    <sequence>
+      <element minOccurs="0" name="startLocation"/>
+      <element minOccurs="0" name="endLocation"/>
+    </sequence>
+  </complexType>
+  <complexType name="WaterWorksAttributePropertyType">
+    <sequence>
+      <element ref="urf:WaterWorksAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="Waterway" substitutionGroup="urf:UrbanFacility" type="urf:WaterwayType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第4号に定める河川、運河、その他の水路。
+（都市計画法第11条第1項第4号）
+下位の地物型として定義されていない都市施設を定義したい場合には、この地物型を使用し、属性「種類」で地物型を識別する。</documentation>
+    </annotation>
+  </element>
+  <complexType name="WaterwayType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityType">
+        <sequence>
+          <element minOccurs="0" name="startLocation"/>
+          <element minOccurs="0" name="endLocation"/>
+          <element minOccurs="0" name="structure"/>
+          <element minOccurs="0" name="length"/>
+          <element minOccurs="0" name="width"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WaterwayPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Waterway"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="WeatherObservation" substitutionGroup="urf:_UrbanFunction" type="urf:WeatherObservationType"/>
+  <complexType name="WeatherObservationType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="weatherObservationType" type="urf:WeatherObservationTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WeatherObservationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:WeatherObservation"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="WeatherObservationType" substitutionGroup="gml:AbstractObject" type="urf:WeatherObservationTypeType"/>
+  <complexType name="WeatherObservationTypeType">
+    <sequence>
+      <element minOccurs="0" name="class"/>
+      <element name="date"/>
+      <element name="totalRainfall"/>
+      <element name="maxRainfallPerHour"/>
+      <element name="averageTemperature"/>
+      <element name="maxTemperature"/>
+      <element name="minTemperature"/>
+      <element name="averageWindSpeed"/>
+      <element name="maxWindDirection"/>
+    </sequence>
+  </complexType>
+  <complexType name="WeatherObservationTypePropertyType">
+    <sequence>
+      <element ref="urf:WeatherObservationType"/>
+    </sequence>
+  </complexType>
+  <element name="WindProtectionFacility" substitutionGroup="urf:UrbanFacilityStipulatedByCabinetOrder" type="urf:WindProtectionFacilityType">
+    <annotation>
+      <documentation>都市計画において定められるべき都市計画法第11条第1項第15号の政令で定める防風の用に供する施設。
+（都市計画法施行令第5条）</documentation>
+    </annotation>
+  </element>
+  <complexType name="WindProtectionFacilityType">
+    <complexContent>
+      <extension base="urf:UrbanFacilityStipulatedByCabinetOrderType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WindProtectionFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:WindProtectionFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ZonalDisasterPreventionFacility" substitutionGroup="urf:Zone" type="urf:ZonalDisasterPreventionFacilityType">
+    <annotation>
+      <documentation>防災街区整備地区計画に定められた区域において、特定防災機能を確保するための防災公共施設。
+（密集市街地整備法第32条第2項第1号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ZonalDisasterPreventionFacilityType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element name="facilityType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ZonalDisasterPreventionFacilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ZonalDisasterPreventionFacility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Zone" substitutionGroup="urf:_UrbanFunction" type="urf:ZoneType">
+    <annotation>
+      <documentation>特定の明確な目的からひとまとまりに区分けされた空間範囲。その空間範囲内の共通的性格を前提とした均質的な一定の規制が設定される。</documentation>
+    </annotation>
+  </element>
+  <complexType name="ZoneType">
+    <complexContent>
+      <extension base="urf:_UrbanFunctionType">
+        <sequence>
+          <element minOccurs="0" name="location"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="boundary" type="urf:BoundaryPropertyType"/>
+          <element minOccurs="0" name="urbanParkAttribute" type="urf:UrbanParkAttributePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ZonePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:Zone"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="ZoneForPreservationOfHistoricalLandscape" substitutionGroup="urf:DistrictsAndZones" type="urf:ZoneForPreservationOfHistoricalLandscapeType">
+    <annotation>
+      <documentation>都市計画法第8条第1項第11号で定められる地区。
+明日香村における歴史的風土の保存及び生活環境の整備等に関する特別措置法（昭和五十五年法律第六十号）第3条第1項の規定による第一種歴史的風土保存地区又は第二種歴史的風土保存地区。
+（都市計画法第8条第1項第11号）</documentation>
+    </annotation>
+  </element>
+  <complexType name="ZoneForPreservationOfHistoricalLandscapeType">
+    <complexContent>
+      <extension base="urf:DistrictsAndZonesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ZoneForPreservationOfHistoricalLandscapePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:ZoneForPreservationOfHistoricalLandscape"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="_AbstractDistrictPlan" substitutionGroup="urf:Zone" type="urf:_AbstractDistrictPlanType">
+    <annotation>
+      <documentation>都市計画法第12条の4第1項に定められる、都市計画に定めることができる計画。
+（都市計画法第12条の4第1項）
+地区計画等については、都市計画に、地区計画等の種類、名称、位置及び区域を定めるものとするとともに、区域の面積その他の政令で定める事項を定めるよう努めるものとする。</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="_AbstractDistrictPlanType">
+    <complexContent>
+      <extension base="urf:ZoneType">
+        <sequence>
+          <element minOccurs="0" name="objectives"/>
+          <element minOccurs="0" name="policy"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="promotionDistrict">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:PromotionDistrict"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="districtDevelopmentPlan">
+            <complexType>
+              <complexContent>
+                <extension base="gml:AbstractFeatureMemberType">
+                  <sequence minOccurs="0">
+                    <element ref="urf:DistrictDevelopmentPlan"/>
+                  </sequence>
+                  <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                </extension>
+              </complexContent>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="_AbstractDistrictPlanPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:_AbstractDistrictPlan"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="_UrbanFunction" substitutionGroup="core:AbstractLogicalSpace" type="urf:_UrbanFunctionType">
+    <annotation>
+      <documentation>都市に関わる様々な活動を推進または制限する条件等の概念的な都市オブジェクト。
+定義：</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="_UrbanFunctionType">
+    <complexContent>
+      <extension base="core:AbstractLogicalSpaceType">
+        <sequence>
+          <element minOccurs="0" name="class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="function"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="usage"/>
+          <element minOccurs="0" name="validFrom"/>
+          <element minOccurs="0" name="validFromType"/>
+          <element minOccurs="0" name="enactmentFiscalYear"/>
+          <element minOccurs="0" name="validTo"/>
+          <element minOccurs="0" name="validToType"/>
+          <element minOccurs="0" name="expirationFiscalYear"/>
+          <element minOccurs="0" name="legalGrounds"/>
+          <element minOccurs="0" name="custodian"/>
+          <element minOccurs="0" name="notificationNumber"/>
+          <element minOccurs="0" name="finalNotificationNumber"/>
+          <element minOccurs="0" name="finalNotificationDate"/>
+          <element minOccurs="0" name="urbanPlanType"/>
+          <element minOccurs="0" name="areaClassificationType"/>
+          <element minOccurs="0" name="nominalArea"/>
+          <element minOccurs="0" name="prefecture"/>
+          <element minOccurs="0" name="city"/>
+          <element minOccurs="0" name="reference"/>
+          <element minOccurs="0" name="reason"/>
+          <element minOccurs="0" name="note"/>
+          <element minOccurs="0" name="surveyYear"/>
+          <element minOccurs="0" name="lod0MultiPoint"/>
+          <element minOccurs="0" name="lod1MultiSurface"/>
+          <element minOccurs="0" name="lod0MultiCurve"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="table" type="urf:UrbanPlanningBasicSurveyTablePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="attributes" type="urf:UrbanPlanningBasicSurveyRecordPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="_UrbanFunctionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urf:_UrbanFunction"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>
