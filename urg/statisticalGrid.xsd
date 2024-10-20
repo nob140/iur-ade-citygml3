@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:urg="https://github.com/nob140/iur-ade-citygml3/urg" elementFormDefault="qualified" targetNamespace="https://github.com/nob140/iur-ade-citygml3/urg" version="3.9.0" xmlns:="">
+  <import namespace=""/>
+  <import namespace="http://www.opengis.net/citygml/2.0"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="AreaClassificationGrid" substitutionGroup="urg:_StatisticalGrid" type="urg:AreaClassificationGridType"/>
+  <complexType name="AreaClassificationGridType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AreaClassificationGridPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:AreaClassificationGrid"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="AreaOfAnnualDiversionsType" substitutionGroup="gml:AbstractObject" type="urg:AreaOfAnnualDiversionsTypeType"/>
+  <complexType name="AreaOfAnnualDiversionsTypeType">
+    <sequence>
+      <element name="year"/>
+      <element minOccurs="0" name="area"/>
+    </sequence>
+  </complexType>
+  <complexType name="AreaOfAnnualDiversionsTypePropertyType">
+    <sequence>
+      <element ref="urg:AreaOfAnnualDiversionsType"/>
+    </sequence>
+  </complexType>
+  <element abstract="true" name="CityObjectGroupProperties" substitutionGroup="core:ADEOfCityObjectGroup" type="urg:CityObjectGroupPropertiesType"/>
+  <complexType abstract="true" name="CityObjectGroupPropertiesType">
+    <complexContent>
+      <extension base="core:ADEOfCityObjectGroupType">
+        <sequence>
+          <element minOccurs="0" name="fiscalYearOfPublication"/>
+          <element minOccurs="0" name="language"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CityObjectGroupPropertiesPropertyType">
+    <sequence>
+      <element ref="urg:CityObjectGroupProperties"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ClassificationItemValueType">
+    <union memberTypes="urg:ClassificationItemValueEnumerationType urg:ClassificationItemValueOtherType"/>
+  </simpleType>
+  <simpleType name="ClassificationItemValueEnumerationType">
+    <restriction base="string"/>
+  </simpleType>
+  <simpleType name="ClassificationItemValueOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="GenericGridCell" substitutionGroup="urg:_StatisticalGrid" type="urg:GenericGridCellType"/>
+  <complexType name="GenericGridCellType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element maxOccurs="unbounded" name="genericValue" type="urg:KeyValuePairPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GenericGridCellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:GenericGridCell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Households" substitutionGroup="urg:_StatisticalGrid" type="urg:HouseholdsType"/>
+  <complexType name="HouseholdsType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="numberOfOrdinaryHouseholds"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="numberOfHouseholdsByOwnership" type=":NumberOfHouseholdsTypePropertyType"/>
+          <element minOccurs="0" name="numberOfMainHouseholds"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="numberOfHouseholdsByStruture" type=":NumberOfHouseholdsTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HouseholdsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:Households"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KeyValuePair" substitutionGroup="gml:AbstractObject" type="urg:KeyValuePairType"/>
+  <complexType name="KeyValuePairType">
+    <sequence>
+      <element name="urg::key"/>
+      <element minOccurs="0" name="urg::codeValue"/>
+      <element minOccurs="0" name="urg::stringValue"/>
+      <element minOccurs="0" name="urg::intValue"/>
+      <element minOccurs="0" name="urg::doubleValue"/>
+      <element minOccurs="0" name="urg::measuredValue"/>
+      <element minOccurs="0" name="urg::dateValue"/>
+      <element minOccurs="0" name="urg::uriValue"/>
+    </sequence>
+  </complexType>
+  <complexType name="KeyValuePairPropertyType">
+    <sequence>
+      <element ref="urg:KeyValuePair"/>
+    </sequence>
+  </complexType>
+  <element name="LandPrice" substitutionGroup="urg:_StatisticalGrid" type="urg:LandPriceType"/>
+  <complexType name="LandPriceType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="landPrice" type="urg:LandPricePerLandUseTypePropertyType"/>
+          <element minOccurs="0" name="currencyUnit"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandPricePropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:LandPrice"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandPricePerLandUseType" substitutionGroup="gml:AbstractObject" type="urg:LandPricePerLandUseTypeType"/>
+  <complexType name="LandPricePerLandUseTypeType">
+    <sequence>
+      <element name="landUse"/>
+      <element minOccurs="0" name="landPrice"/>
+    </sequence>
+  </complexType>
+  <complexType name="LandPricePerLandUseTypePropertyType">
+    <sequence>
+      <element ref="urg:LandPricePerLandUseType"/>
+    </sequence>
+  </complexType>
+  <simpleType name="LandSlideTypeValueType">
+    <restriction base="string">
+      <enumeration value="土石流"/>
+      <enumeration value="土石流（土砂流）"/>
+      <enumeration value="土石流（山腹崩壊・土砂流）"/>
+      <enumeration value="土石流（山腹崩壊）"/>
+      <enumeration value="土石流（山林火災）"/>
+      <enumeration value="土石流（流木堆積、えん堤基礎部損傷）"/>
+      <enumeration value="土石流（噴火）"/>
+      <enumeration value="土石流（施設災害）"/>
+      <enumeration value="土石流（その他（民地盛土河川流出））"/>
+      <enumeration value="土石流（その他（洪水））"/>
+      <enumeration value="土石流（その他（河道内堆積物の泥流化））"/>
+      <enumeration value="土石流（その他）"/>
+      <enumeration value="がけ崩れ"/>
+      <enumeration value="地すべり"/>
+      <enumeration value="雪崩（表層）"/>
+      <enumeration value="雪崩（全層）"/>
+      <enumeration value="雪崩"/>
+      <enumeration value="山林火災（計上なし）"/>
+    </restriction>
+  </simpleType>
+  <element name="LandUseDiversion" substitutionGroup="urg:_StatisticalGrid" type="urg:LandUseDiversionType"/>
+  <complexType name="LandUseDiversionType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="areaOfAnnualDiversion" type="urg:NumberOfAnnualDiversionsTypePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="numberOfAnnualDiversion" type="urg:AreaOfAnnualDiversionsTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandUseDiversionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:LandUseDiversion"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="LandslideDisaster" substitutionGroup="urg:_StatisticalGrid" type="urg:LandslideDisasterType"/>
+  <complexType name="LandslideDisasterType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="dateOfOccurence"/>
+          <element minOccurs="0" name="landSlideType" type="urg:LandSlideTypeValueType"/>
+          <element minOccurs="0" name="maximumRainfallPerDay"/>
+          <element minOccurs="0" name="maximumRainfallPerHour"/>
+          <element minOccurs="0" name="slope"/>
+          <element minOccurs="0" name="sedimentDischarge"/>
+          <element minOccurs="0" name="length"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LandslideDisasterPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:LandslideDisaster"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="NumberOfAnnualDiversionsType" substitutionGroup="gml:AbstractObject" type="urg:NumberOfAnnualDiversionsTypeType"/>
+  <complexType name="NumberOfAnnualDiversionsTypeType">
+    <sequence>
+      <element name="year"/>
+      <element minOccurs="0" name="count"/>
+    </sequence>
+  </complexType>
+  <complexType name="NumberOfAnnualDiversionsTypePropertyType">
+    <sequence>
+      <element ref="urg:NumberOfAnnualDiversionsType"/>
+    </sequence>
+  </complexType>
+  <element name="NumberOfHouseholdsType" substitutionGroup="gml:AbstractObject" type="urg:NumberOfHouseholdsTypeType"/>
+  <complexType name="NumberOfHouseholdsTypeType">
+    <sequence>
+      <element name="class"/>
+      <element minOccurs="0" name="number"/>
+    </sequence>
+  </complexType>
+  <complexType name="NumberOfHouseholdsTypePropertyType">
+    <sequence>
+      <element ref="urg:NumberOfHouseholdsType"/>
+    </sequence>
+  </complexType>
+  <element name="OfficesAndEmployees" substitutionGroup="urg:_StatisticalGrid" type="urg:OfficesAndEmployeesType"/>
+  <complexType name="OfficesAndEmployeesType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="numberOfOffices"/>
+          <element minOccurs="0" name="numberOfEmployees"/>
+          <element minOccurs="0" name="salesAmount"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OfficesAndEmployeesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:OfficesAndEmployees"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Population" substitutionGroup="urg:_StatisticalGrid" type="urg:PopulationType"/>
+  <complexType name="PopulationType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="total"/>
+          <element minOccurs="0" name="daytimePopulation"/>
+          <element minOccurs="0" name="daytimePopulationDensity"/>
+          <element minOccurs="0" name="natuarlIncrease"/>
+          <element minOccurs="0" name="births"/>
+          <element minOccurs="0" name="deaths"/>
+          <element minOccurs="0" name="socialIncrease"/>
+          <element minOccurs="0" name="moveFrom"/>
+          <element minOccurs="0" name="moveTo"/>
+          <element minOccurs="0" name="increasement"/>
+          <element minOccurs="0" name="malePopulation"/>
+          <element minOccurs="0" name="femalePopulation"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="populationByAgeAndSex" type="urg:PopulationByAgeAndSexTypePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PopulationPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:Population"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PopulationByAgeAndSexType" substitutionGroup="gml:AbstractObject" type="urg:PopulationByAgeAndSexTypeType"/>
+  <complexType name="PopulationByAgeAndSexTypeType">
+    <sequence>
+      <element name="ageAndSex"/>
+      <element minOccurs="0" name="number"/>
+    </sequence>
+  </complexType>
+  <complexType name="PopulationByAgeAndSexTypePropertyType">
+    <sequence>
+      <element ref="urg:PopulationByAgeAndSexType"/>
+    </sequence>
+  </complexType>
+  <element name="PublicTransitAccessibility" substitutionGroup="urg:_StatisticalGrid" type="urg:PublicTransitAccessibilityType"/>
+  <complexType name="PublicTransitAccessibilityType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="availability"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PublicTransitAccessibilityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:PublicTransitAccessibility"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="StatisticalDistribution" substitutionGroup="gml:AbstractFeature" type="urg:StatisticalDistributionType"/>
+  <complexType name="StatisticalDistributionType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="urg::class"/>
+          <element minOccurs="0" name="urg::surveyYear"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="StatisticalDistributionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:StatisticalDistribution"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="StatusOfSightSeeing" substitutionGroup="urg:_StatisticalGrid" type="urg:StatusOfSightSeeingType"/>
+  <complexType name="StatusOfSightSeeingType">
+    <complexContent>
+      <extension base="urg:_StatisticalGridType">
+        <sequence>
+          <element minOccurs="0" name="totalAccomodations"/>
+          <element minOccurs="0" name="totalCapacity"/>
+          <element minOccurs="0" name="totalRooms"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="StatusOfSightSeeingPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:StatusOfSightSeeing"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="_StatisticalGrid" substitutionGroup="core:AbstractSpace" type="urg:_StatisticalGridType"/>
+  <complexType abstract="true" name="_StatisticalGridType">
+    <complexContent>
+      <extension base="core:AbstractSpaceType">
+        <sequence>
+          <element minOccurs="0" name="class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="value"/>
+          <element minOccurs="0" name="urbanPlanType"/>
+          <element minOccurs="0" name="areaClassificationType"/>
+          <element minOccurs="0" name="prefecture"/>
+          <element minOccurs="0" name="city"/>
+          <element minOccurs="0" name="surveyYear"/>
+          <element minOccurs="0" name="referenceDate"/>
+          <element minOccurs="0" name="urg::lod-2MultiSurface"/>
+          <element minOccurs="0" name="lod-1MultiSurface"/>
+          <element minOccurs="0" name="lod-2MultiSurface"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="_StatisticalGridPropertyType">
+    <sequence minOccurs="0">
+      <element ref="urg:_StatisticalGrid"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>
