@@ -114,7 +114,7 @@
       <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDesc" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="thematicSrcDesc" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDesc" type="gml:CodeType"/>
-      <element name="lod1HeightType" type="gml:CodeType"/>
+      <element minOccurs="0" name="lod1HeightType" type="gml:CodeType"/>
       <element maxOccurs="3" minOccurs="0" name="lodType" type="uro:BuildingLODTypeType"/>
     </sequence>
   </complexType>
@@ -163,7 +163,9 @@
       <element minOccurs="0" name="buildingHeight" type="gml:LengthType"/>
       <element minOccurs="0" name="eaveHeight" type="gml:LengthType"/>
       <element minOccurs="0" name="note" type="string"/>
-      <element name="surveyYear" type="gYear"/>
+      <element minOccurs="0" name="prefecture" type="gml:CodeType"/>
+      <element minOccurs="0" name="city" type="gml:CodeType"/>
+      <element minOccurs="0" name="surveyYear" type="gYear"/>
     </sequence>
   </complexType>
   <complexType name="BuildingDetailAttributePropertyType">
@@ -232,11 +234,11 @@
   <element name="BuildingIDAttribute" substitutionGroup="gml:AbstractObject" type="uro:BuildingIDAttributeType"/>
   <complexType name="BuildingIDAttributeType">
     <sequence>
-      <element name="buildingID" type="string"/>
+      <element minOccurs="0" name="buildingID" type="string"/>
       <element minOccurs="0" name="branchID" type="integer"/>
       <element minOccurs="0" name="partID" type="integer"/>
       <element minOccurs="0" name="prefecture" type="gml:CodeType"/>
-      <element name="city" type="gml:CodeType"/>
+      <element minOccurs="0" name="city" type="gml:CodeType"/>
     </sequence>
   </complexType>
   <complexType name="BuildingIDAttributePropertyType">
@@ -291,10 +293,10 @@
       <element ref="uro:BuildingLandSlideRiskAttribute"/>
     </sequence>
   </complexType>
-  <element name="BuildingProperties" substitutionGroup="bldg:ADEOfBuilding" type="uro:BuildingPropertiesType"/>
+  <element name="BuildingProperties" substitutionGroup="bldg:ADEOfAbstractBuilding" type="uro:BuildingPropertiesType"/>
   <complexType name="BuildingPropertiesType">
     <complexContent>
-      <extension base="bldg:ADEOfBuildingType">
+      <extension base="bldg:ADEOfAbstractBuildingType">
         <sequence>
           <element minOccurs="0" name="buildingDataQualityAttribute" type="uro:BuildingDataQualityAttributePropertyType"/>
           <element maxOccurs="unbounded" minOccurs="0" name="buildingDetailAttribute" type="uro:BuildingDetailAttributePropertyType"/>
@@ -2012,7 +2014,7 @@
       <element minOccurs="0" name="landUseType" type="gml:CodeType"/>
       <element minOccurs="0" name="reference" type="string"/>
       <element minOccurs="0" name="note" type="string"/>
-      <element name="surveyYear" type="gYear"/>
+      <element minOccurs="0" name="surveyYear" type="gYear"/>
     </sequence>
   </complexType>
   <complexType name="LargeCustomerFacilityAttributePropertyType">
