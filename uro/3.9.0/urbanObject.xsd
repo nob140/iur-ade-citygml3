@@ -112,10 +112,22 @@
     <sequence>
       <element maxOccurs="unbounded" minOccurs="0" name="srcScale" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDesc" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDescLod0" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" name="geometrySrcDescLod1" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDescLod2" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDescLod3" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="geometrySrcDescLod4" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="thematicSrcDesc" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDesc" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod0" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod1" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod2" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod3" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod4" type="gml:CodeType"/>
       <element minOccurs="0" name="lod1HeightType" type="gml:CodeType"/>
       <element maxOccurs="3" minOccurs="0" name="lodType" type="uro:BuildingLODTypeType"/>
+      <element minOccurs="0" name="tranDataAccquisition" type="string"/>
+      <element minOccurs="0" name="publicSurveyDataQualityAttribute" type="uro:PublicSurveyDataQualityAttributePropertyType"/>
     </sequence>
   </complexType>
   <complexType name="BuildingDataQualityAttributePropertyType">
@@ -301,7 +313,7 @@
           <element minOccurs="0" name="buildingDataQualityAttribute" type="uro:BuildingDataQualityAttributePropertyType"/>
           <element maxOccurs="unbounded" minOccurs="0" name="buildingDetailAttribute" type="uro:BuildingDetailAttributePropertyType"/>
           <element maxOccurs="unbounded" minOccurs="0" name="buildingDisasterRiskAttribute" type="uro:BuildingDisasterRiskAttributePropertyType"/>
-          <element name="buildingIDAttribute" type="uro:BuildingIDAttributePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="buildingIDAttribute" type="uro:BuildingIDAttributePropertyType"/>
           <element minOccurs="0" name="bldgFacilityIdAttribute" type="uro:FacilityIdAttributePropertyType"/>
           <element maxOccurs="unbounded" minOccurs="0" name="bldgFacilityAttribute" type="uro:FacilityAttributePropertyType"/>
           <element maxOccurs="unbounded" minOccurs="0" name="largeCustomerFacilityAttribute" type="uro:LargeCustomerFacilityAttributePropertyType"/>
@@ -2621,6 +2633,37 @@
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="PublicSurveyDataQualityAttribute" substitutionGroup="gml:AbstractObject" type="uro:PublicSurveyDataQualityAttributeType"/>
+  <complexType name="PublicSurveyDataQualityAttributeType">
+    <sequence>
+      <element name="areaType" type="gml:CodeType"/>
+    </sequence>
+  </complexType>
+  <complexType name="PublicSurveyDataQualityAttributePropertyType">
+    <sequence>
+      <element ref="uro:PublicSurveyDataQualityAttribute"/>
+    </sequence>
+  </complexType>
+  <element name="PublicSurveyDataQualityAttribute" substitutionGroup="gml:AbstractObject" type="uro:PublicSurveyDataQualityAttributeType"/>
+  <complexType name="PublicSurveyDataQualityAttributeType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="srcScaleLod0" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="srcScaleLod1" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="srcScaleLod2" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="srcScaleLod3" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="srcScaleLod4" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="publicSurveySrcDescLod0" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="publicSurveySrcDescLod1" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="publicSurveySrcDescLod2" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="publicSurveySrcDescLod3" type="gml:CodeType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="publicSurveySrcDescLod4" type="gml:CodeType"/>
+    </sequence>
+  </complexType>
+  <complexType name="PublicSurveyDataQualityAttributePropertyType">
+    <sequence>
+      <element ref="uro:PublicSurveyDataQualityAttribute"/>
+    </sequence>
   </complexType>
   <element name="RailwayProperties" substitutionGroup="tran:ADEOfRailway" type="uro:RailwayPropertiesType"/>
   <complexType name="RailwayPropertiesType">

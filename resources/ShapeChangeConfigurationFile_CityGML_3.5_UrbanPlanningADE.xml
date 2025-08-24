@@ -29,6 +29,7 @@
   
   <log>
     <parameter name="reportLevel" value="INFO"/>
+    <!-- <parameter name="logFile" value="Log_CityGML_3.5_UrbanPlanningADE_urg.log.xml"/> -->
     <parameter name="logFile" value="Log_CityGML_3.5_UrbanPlanningADE_uro.log.xml"/>
   </log>
   
