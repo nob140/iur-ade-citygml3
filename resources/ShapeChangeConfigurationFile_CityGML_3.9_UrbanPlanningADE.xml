@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" 
+    xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+    
+  <input>
+    <parameter name="inputModelType" value="EA7"/>
+    <parameter name="inputFile" value="CityGML_3.0_UrbanPlanningADE_3.9.eap"/>
+    
+<!--
+    <parameter name="appSchemaName" value="urf"/>
+    <parameter name="appSchemaName" value="urg"/>
+    <parameter name="appSchemaName" value="urt"/>
+-->
+    <parameter name="appSchemaName" value="uro"/>
+
+    <parameter name="checkingConstraints" value="disabled"/>
+    <parameter name="addTaggedValues" value="itemType"/>
+    
+    <xi:include href="http://shapechange.net/resources/config/StandardAliases.xml"/>
+    <stereotypeAliases>
+      <StereotypeAlias wellknown="property" alias="Property"/>
+      <StereotypeAlias wellknown="version" alias="Version"/>
+      <StereotypeAlias wellknown="FeatureType" alias="TopLevelFeatureType"/>
+    </stereotypeAliases>
+  </input>
+  
+  <log>
+    <parameter name="reportLevel" value="INFO"/>
+    <!-- <parameter name="logFile" value="Log_CityGML_3.5_UrbanPlanningADE_urg.log.xml"/> -->
+    <parameter name="logFile" value="Log_CityGML_3.9_UrbanPlanningADE_uro.log.xml"/>
+  </log>
+  
+  <targets>
+    <TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" mode="enabled">
+      <targetParameter name="outputDirectory" value=".\"/>
+      <targetParameter name="defaultEncodingRule" value="citygml"/>
+      <rules>
+        <EncodingRule name="citygml" extends="iso19136_2007">
+          <rule name="rule-xsd-rel-association-classes"/>
+          <rule name="rule-xsd-cls-basictype"/>
+          <rule name="rule-xsd-prop-initialValue"/>
+          <rule name="rule-xsd-prop-att-map-entry"/>
+          <rule name="rule-xsd-prop-constrainingFacets"/>
+          <rule name="rule-xsd-all-notEncoded"/>
+          <rule name="rule-xsd-cls-union-asGroup"/>
+        </EncodingRule>
+      </rules>
+
+      <xi:include href="http://shapechange.net/resources/config/StandardRules.xml"/>
+      <xi:include href="http://shapechange.net/resources/config/StandardNamespaces.xml"/>
+      <xmlNamespaces>
+        <XmlNamespace nsabr="app" ns="http://www.opengis.net/citygml/appearance/3.0" location="https://schemas.opengis.net/citygml/appearance/3.0/appearance.xsd"/>
+        <XmlNamespace nsabr="brid" ns="http://www.opengis.net/citygml/bridge/3.0" location="https://schemas.opengis.net/citygml/bridge/3.0/bridge.xsd"/>
+        <XmlNamespace nsabr="bldg" ns="http://www.opengis.net/citygml/building/3.0" location="https://schemas.opengis.net/citygml/building/3.0/building.xsd"/>
+        <XmlNamespace nsabr="pcl" ns="http://www.opengis.net/citygml/pointcloud/3.0" location="https://schemas.opengis.net/citygml/pointcloud/3.0/pointCloud.xsd"/>
+        <XmlNamespace nsabr="frn" ns="http://www.opengis.net/citygml/cityfurniture/3.0" location="https://schemas.opengis.net/citygml/cityfurniture/3.0/cityFurniture.xsd"/>
+        <XmlNamespace nsabr="grp" ns="http://www.opengis.net/citygml/cityobjectgroup/3.0" location="https://schemas.opengis.net/citygml/cityobjectgroup/3.0/cityObjectGroup.xsd"/>
+        <XmlNamespace nsabr="con" ns="http://www.opengis.net/citygml/construction/3.0" location="https://schemas.opengis.net/citygml/construction/3.0/construction.xsd"/>
+        <XmlNamespace nsabr="core" ns="http://www.opengis.net/citygml/3.0" location="https://schemas.opengis.net/citygml/3.0/core.xsd"/>
+        <XmlNamespace nsabr="dyn" ns="http://www.opengis.net/citygml/dynamizer/3.0" location="https://schemas.opengis.net/citygml/dynamizer/3.0/dynamizer.xsd"/>
+        <XmlNamespace nsabr="gen" ns="http://www.opengis.net/citygml/generics/3.0" location="https://schemas.opengis.net/citygml/generics/3.0/generics.xsd"/>
+        <XmlNamespace nsabr="luse" ns="http://www.opengis.net/citygml/landuse/3.0" location="https://schemas.opengis.net/citygml/landuse/3.0/landUse.xsd"/>
+        <XmlNamespace nsabr="dem" ns="http://www.opengis.net/citygml/relief/3.0" location="https://schemas.opengis.net/citygml/relief/3.0/relief.xsd"/>
+        <XmlNamespace nsabr="tran" ns="http://www.opengis.net/citygml/transportation/3.0" location="https://schemas.opengis.net/citygml/transportation/3.0/transportation.xsd"/>
+        <XmlNamespace nsabr="tun" ns="http://www.opengis.net/citygml/tunnel/3.0" location="https://schemas.opengis.net/citygml/tunnel/3.0/tunnel.xsd"/>
+        <XmlNamespace nsabr="veg" ns="http://www.opengis.net/citygml/vegetation/3.0" location="https://schemas.opengis.net/citygml/vegetation/3.0/vegetation.xsd"/>
+        <XmlNamespace nsabr="vers" ns="http://www.opengis.net/citygml/versioning/3.0" location="https://schemas.opengis.net/citygml/versioning/3.0/versioning.xsd"/>
+        <XmlNamespace nsabr="wtr" ns="http://www.opengis.net/citygml/waterbody/3.0" location="https://schemas.opengis.net/citygml/waterbody/3.0/waterBody.xsd"/>
+        <XmlNamespace nsabr="xAL" ns="urn:oasis:names:tc:ciq:xal:3" location="http://docs.oasis-open.org/ciq/v3.0/cs02/xsd/default/xsd/xAL.xsd"/> 
+      </xmlNamespaces>
+      <xi:include href="http://shapechange.net/resources/config/StandardMapEntries.xml"/>
+      <xsdMapEntries>
+        <XsdMapEntry type="QuantityExtent" xsdEncodingRules="iso19136_2007" xmlType="gml:QuantityExtentType" xmlPropertyType="gml:QuantityExtentType" xmlTypeType="complex" xmlTypeContent="simple"/>
+        <!-- added for Urban Planning ADE 2024-11-24 -->
+        <!-- core -->
+        <XsdMapEntry type="Address" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="core:AddressPropertyType" xmlType="core:AddressPropertyType" xmlTypeType="simple" xmlTypeContent="simple"/>
+        <!-- gml -->
+        <XsdMapEntry type="Code" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:CodeType" xmlType="gml:CodeType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+        <XsdMapEntry type="DoubleList" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:doubleList" xmlType="gml:doubleList" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+        <XsdMapEntry type="Point" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:PointPropertyType" xmlType="gml:PointPropertyType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+        <!-- xs -->
+        <XsdMapEntry type="URI" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple"/>
+        <XsdMapEntry type="gYear" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gYear" xmlType="gYear" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+        <XsdMapEntry type="gYearMonth" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gYearMonth" xmlType="gYearMonth" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+        <!-- uro -->
+        <XsdMapEntry type="ConstructionInstallation" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="uro:ConstructionInstallationPropertyType" xmlType="uro:ConstructionInstallationPropertyType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+
+        
+      </xsdMapEntries>
+    </TargetXmlSchema>
+    <Target class="de.interactive_instruments.ShapeChange.Target.Codelists.CodelistDictionaries" mode="disabled">
+      <targetParameter name="outputDirectory" value="./codelists"/>
+    </Target>
+  </targets>
+</ShapeChangeConfiguration>

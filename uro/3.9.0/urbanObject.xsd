@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bldg="http://www.opengis.net/citygml/building/3.0" xmlns:brid="http://www.opengis.net/citygml/bridge/3.0" xmlns:con="http://www.opengis.net/citygml/construction/3.0" xmlns:core="http://www.opengis.net/citygml/3.0" xmlns:frn="http://www.opengis.net/citygml/cityfurniture/3.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/3.0" xmlns:luse="http://www.opengis.net/citygml/landuse/3.0" xmlns:tran="http://www.opengis.net/citygml/transportation/3.0" xmlns:tun="http://www.opengis.net/citygml/tunnel/3.0" xmlns:uro="https://nob140.github.io/iur-ade-citygml3/uro/3.9.0" xmlns:veg="http://www.opengis.net/citygml/vegetation/3.0" elementFormDefault="qualified" targetNamespace="https://nob140.github.io/iur-ade-citygml3/uro/3.9.0" version="3.9.0">
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bldg="http://www.opengis.net/citygml/building/3.0" xmlns:brid="http://www.opengis.net/citygml/bridge/3.0" xmlns:con="http://www.opengis.net/citygml/construction/3.0" xmlns:core="http://www.opengis.net/citygml/3.0" xmlns:frn="http://www.opengis.net/citygml/cityfurniture/3.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/3.0" xmlns:luse="http://www.opengis.net/citygml/landuse/3.0" xmlns:tran="http://www.opengis.net/citygml/transportation/3.0" xmlns:tun="http://www.opengis.net/citygml/tunnel/3.0" xmlns:uro="https://nob140.github.io/iur-ade-citygml3/uro/3.9" xmlns:veg="http://www.opengis.net/citygml/vegetation/3.0" elementFormDefault="qualified" targetNamespace="https://nob140.github.io/iur-ade-citygml3/uro/3.9" version="3.9.0">
   <import namespace="http://www.opengis.net/citygml/3.0" schemaLocation="https://schemas.opengis.net/citygml/3.0/core.xsd"/>
   <import namespace="http://www.opengis.net/citygml/bridge/3.0" schemaLocation="https://schemas.opengis.net/citygml/bridge/3.0/bridge.xsd"/>
   <import namespace="http://www.opengis.net/citygml/building/3.0" schemaLocation="https://schemas.opengis.net/citygml/building/3.0/building.xsd"/>
@@ -125,7 +125,7 @@
       <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod3" type="gml:CodeType"/>
       <element maxOccurs="unbounded" minOccurs="0" name="appearanceSrcDescLod4" type="gml:CodeType"/>
       <element minOccurs="0" name="lod1HeightType" type="gml:CodeType"/>
-      <element maxOccurs="3" minOccurs="0" name="lodType" type="uro:BuildingLODTypeType"/>
+      <element maxOccurs="3" minOccurs="0" name="lodType" type="gml:CodeType"/>
       <element minOccurs="0" name="tranDataAccquisition" type="string"/>
       <element minOccurs="0" name="publicSurveyDataQualityAttribute" type="uro:PublicSurveyDataQualityAttributePropertyType"/>
     </sequence>
@@ -2633,17 +2633,6 @@
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
-  </complexType>
-  <element name="PublicSurveyDataQualityAttribute" substitutionGroup="gml:AbstractObject" type="uro:PublicSurveyDataQualityAttributeType"/>
-  <complexType name="PublicSurveyDataQualityAttributeType">
-    <sequence>
-      <element name="areaType" type="gml:CodeType"/>
-    </sequence>
-  </complexType>
-  <complexType name="PublicSurveyDataQualityAttributePropertyType">
-    <sequence>
-      <element ref="uro:PublicSurveyDataQualityAttribute"/>
-    </sequence>
   </complexType>
   <element name="PublicSurveyDataQualityAttribute" substitutionGroup="gml:AbstractObject" type="uro:PublicSurveyDataQualityAttributeType"/>
   <complexType name="PublicSurveyDataQualityAttributeType">
